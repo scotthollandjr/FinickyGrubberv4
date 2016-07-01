@@ -5,7 +5,7 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="finicky grubber"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
@@ -27,8 +27,21 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.guest.grubbery.MainActivity" />
         </activity>
-        <activity android:name=".AccountActivity" />
-        <activity android:name=".ThankActivity"></activity>
+        <activity android:name=".AccountActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.guest.grubbery.MainActivity" />
+        </activity>
+        <activity android:name=".ThankActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.guest.grubbery.MainActivity" />
+        </activity>
+        <activity android:name=".ResultsActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.guest.grubbery.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

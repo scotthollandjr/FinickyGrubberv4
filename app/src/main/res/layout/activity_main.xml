@@ -17,7 +17,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="the finicky grubber"
+        android:text="finicky grubber"
         android:id="@+id/appNameTextView"
         android:textSize="60sp"
         android:textColor="@color/colorSecondaryText"
