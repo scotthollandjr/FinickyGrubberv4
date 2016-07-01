@@ -15,6 +15,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Bind(R.id.appNameTextView) TextView mAppNameTextView;
     @Bind(R.id.dogButton) Button mDogButton;
     @Bind(R.id.catButton) Button mCatButton;
+    @Bind(R.id.accountButton) Button mAccountButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +30,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         mDogButton.setOnClickListener(this);
         mCatButton.setOnClickListener(this);
+        mAccountButton.setOnClickListener(this);
     }
 
     @Override
@@ -38,6 +41,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         if(view == mCatButton) {
             Intent intent = new Intent(MainActivity.this, CatActivity.class);
+            startActivity(intent);
+        }
+        if(view == mAccountButton) {
+            Intent intent = new Intent(MainActivity.this, AccountActivity.class);
             startActivity(intent);
         }
     }

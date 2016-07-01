@@ -20,15 +20,15 @@
         <activity android:name=".DogActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.guest.grubbery.MainActivity">
-            </meta-data>
+                android:value="com.example.guest.grubbery.MainActivity" />
         </activity>
         <activity android:name=".CatActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.guest.grubbery.MainActivity">
-            </meta-data>
+                android:value="com.example.guest.grubbery.MainActivity" />
         </activity>
+        <activity android:name=".AccountActivity" />
+        <activity android:name=".ThankActivity"></activity>
     </application>
 
 </manifest>
