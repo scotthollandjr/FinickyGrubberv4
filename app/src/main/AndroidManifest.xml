@@ -45,7 +45,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.guest.grubbery.ui.MainActivity" />
         </activity>
-        <activity android:name=".ui.MapActivity"></activity>
+        <activity android:name=".ui.DictionaryActivity"></activity>
     </application>
 
 </manifest>

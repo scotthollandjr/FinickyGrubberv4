@@ -2,10 +2,12 @@ package com.example.guest.grubbery.ui;
 
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.support.annotation.BinderThread;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.guest.grubbery.R;
@@ -18,6 +20,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Bind(R.id.dogButton) Button mDogButton;
     @Bind(R.id.catButton) Button mCatButton;
     @Bind(R.id.accountButton) Button mAccountButton;
+
+    @Bind(R.id.definitionButton) Button mDefinitionButton;
+    @Bind(R.id.definitionText) EditText mDefinitionText;
 
 
     @Override
@@ -33,6 +38,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mDogButton.setOnClickListener(this);
         mCatButton.setOnClickListener(this);
         mAccountButton.setOnClickListener(this);
+        mDefinitionButton.setOnClickListener(this);
     }
 
     @Override
@@ -47,6 +53,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         if(view == mAccountButton) {
             Intent intent = new Intent(MainActivity.this, AccountActivity.class);
+            startActivity(intent);
+        }
+        if(view == mDefinitionButton) {
+            String word = mDefinitionText.getText().toString();
+            Intent intent = new Intent(MainActivity.this, DictionaryActivity.class);
+            intent.putExtra("word", word);
             startActivity(intent);
         }
     }

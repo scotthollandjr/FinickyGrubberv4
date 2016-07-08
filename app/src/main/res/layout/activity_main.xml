@@ -97,4 +97,24 @@
         android:fontFamily="serif"
         android:textStyle="bold" />
 
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/definitionText"
+        android:layout_above="@+id/dogButton"
+        android:layout_alignLeft="@+id/dogButton"
+        android:layout_alignStart="@+id/dogButton"
+        android:hint="definition" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Search"
+        android:id="@+id/definitionButton"
+        android:layout_alignTop="@+id/definitionText"
+        android:layout_toRightOf="@+id/definitionText"
+        android:layout_toEndOf="@+id/definitionText"
+        android:layout_marginLeft="48dp"
+        android:layout_marginStart="48dp" />
+
 </RelativeLayout>
