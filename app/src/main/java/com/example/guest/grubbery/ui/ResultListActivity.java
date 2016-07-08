@@ -1,11 +1,13 @@
-package com.example.guest.grubbery;
+package com.example.guest.grubbery.ui;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-public class ResultsActivity extends AppCompatActivity {
+import com.example.guest.grubbery.R;
+
+public class ResultListActivity extends AppCompatActivity {
     private ListView mListView;
     private String[] foods = new String[] {"Beef Frittata Veg", "Chicken A La Veg", "Duck & Sweet Potato", "Game Bird", "Hasen Duckenpfeffer", "Lamb & Lentil", "Pork & Applesauce", "Pork & Peas", "Salmon A La Veg", "Salmon Tunalini", "Surf & Turf", "Whitefish & Potato"};
 

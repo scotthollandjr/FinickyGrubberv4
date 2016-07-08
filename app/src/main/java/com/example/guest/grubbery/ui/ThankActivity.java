@@ -1,9 +1,11 @@
-package com.example.guest.grubbery;
+package com.example.guest.grubbery.ui;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
+
+import com.example.guest.grubbery.R;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;

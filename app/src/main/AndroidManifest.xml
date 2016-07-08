@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.MainActivity"
             android:theme="@style/NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,30 +17,30 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DogActivity">
+        <activity android:name=".ui.DogActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.guest.grubbery.MainActivity" />
+                android:value="com.example.guest.grubbery.ui.MainActivity" />
         </activity>
-        <activity android:name=".CatActivity">
+        <activity android:name=".ui.CatActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.guest.grubbery.MainActivity" />
+                android:value="com.example.guest.grubbery.ui.MainActivity" />
         </activity>
-        <activity android:name=".AccountActivity">
+        <activity android:name=".ui.AccountActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.guest.grubbery.MainActivity" />
+                android:value="com.example.guest.grubbery.ui.MainActivity" />
         </activity>
-        <activity android:name=".ThankActivity">
+        <activity android:name=".ui.ThankActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.guest.grubbery.MainActivity" />
+                android:value="com.example.guest.grubbery.ui.MainActivity" />
         </activity>
-        <activity android:name=".ResultsActivity">
+        <activity android:name=".ui.ResultListActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.guest.grubbery.MainActivity" />
+                android:value="com.example.guest.grubbery.ui.MainActivity" />
         </activity>
     </application>
 
