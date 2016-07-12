@@ -83,7 +83,6 @@
                         android:hint="Look-Up Ingredient"
                         android:id="@+id/lookUpText"
                         android:layout_width="fill_parent"
-                        android:layout_toLeftOf="@id/defineButton"
                         android:layout_height="wrap_content"
                         android:padding="15dp"
                         android:background="@color/colorTextIcons"

@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import com.example.guest.grubbery.Constants;
 import com.example.guest.grubbery.R;
@@ -13,6 +15,7 @@ import com.example.guest.grubbery.services.DictionaryService;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import butterknife.Bind;
 import butterknife.ButterKnife;
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -21,6 +24,7 @@ import okhttp3.Response;
 public class DictionaryActivity extends AppCompatActivity {
 
     public static ArrayList<Word> mWords = new ArrayList<>();
+    @Bind(R.id.defintionListView) ListView mDefinitionListView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +40,7 @@ public class DictionaryActivity extends AppCompatActivity {
 
     public static void findDefinition(String word) {
         final DictionaryService dictionaryService = new DictionaryService();
+
         dictionaryService.getDefinition(word, new Callback() {
 
             @Override
@@ -44,17 +49,26 @@ public class DictionaryActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onResponse(Call call, Response response) throws IOException {
-                try {
-                    String jsonData = response.body().string();
-                    if (response.isSuccessful()) {
-                        Log.d("CUBONE dict act", "jsonData =" + jsonData);
-                        mWords = dictionaryService.processResults(response);
-                        Log.v("CUBONE dict act", mWords.size() + "");
+            public void onResponse(Call call, Response response) {
+                mWords = dictionaryService.processResults(response);
+
+                DictionaryActivity.this.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+
+                        String[] foodNames = new String[mWords.size()];
+                        for (int i = 0; i < foodNames.length; i ++) {
+                            foodNames[i] = mWords.get(i).getWord();
+                        }
+
+                        ArrayAdapter adapter = new ArrayAdapter(DictionaryActivity.this, android.R.layout.simple_list_item_1, foodNames);
+                        mDefinitionListView.setAdapter(adapter);
+
+                        for (Word word : mWords) {
+                            Log.d("CUBONE dict acti", "Name: " + word.getWord());
+                        }
                     }
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                });
             }
         });
     }

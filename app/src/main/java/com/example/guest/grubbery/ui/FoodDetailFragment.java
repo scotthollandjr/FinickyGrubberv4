@@ -7,6 +7,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.guest.grubbery.R;
@@ -20,9 +22,11 @@ import butterknife.ButterKnife;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class FoodDetailFragment extends Fragment {
+public class FoodDetailFragment extends Fragment implements View.OnClickListener {
     @Bind(R.id.foodNameTextView) TextView mFoodNameLabel;
     @Bind(R.id.brandTextView) TextView mBrandLabel;
+    @Bind(R.id.lookUpText) EditText mLookUpLabel;
+    @Bind(R.id.defineButton) Button mDefineButton;
 
     private Food mFood;
 
@@ -51,17 +55,21 @@ public class FoodDetailFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_food_detail, container, false);
         ButterKnife.bind(this, view);
 
+        mDefineButton.setOnClickListener(this);
+
         mFoodNameLabel.setText(mFood.getName());
         mBrandLabel.setText(mFood.getBrand());
 
         return view;
     }
 
-    if(view == mDefinitionButton) {
-        String word = mDefinitionText.getText().toString();
-        Intent intent = new Intent(MainActivity.this, DictionaryActivity.class);
-        intent.putExtra("word", word);
-        startActivity(intent);
+    @Override
+    public void onClick(View view) {
+        if(view == mDefineButton) {
+            String word = mLookUpLabel.getText().toString();
+            Intent intent = new Intent(getActivity(), DictionaryActivity.class);
+            intent.putExtra("word", word);
+            startActivity(intent);
+        }
     }
-
 }
