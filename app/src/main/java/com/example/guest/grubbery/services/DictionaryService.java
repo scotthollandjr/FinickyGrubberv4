@@ -50,8 +50,9 @@ public class DictionaryService {
             String jsonData = response.body().string();
             Log.d("CUBONE dict serv", "jsonData =" + jsonData);
             if (response.isSuccessful()) {
-                Log.d("CUBONE dict serv", "got into if");
+
                 JSONObject dictionaryJSON = new JSONObject(jsonData);
+                Log.d("CUBONE dict serv", "got into if" );
                 JSONArray wordsJSON = dictionaryJSON.getJSONArray("results");
 
                 for (int i = 0; i < wordsJSON.length(); i++) {

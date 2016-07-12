@@ -48,7 +48,7 @@ public class FoodListAdapter extends RecyclerView.Adapter<FoodListAdapter.FoodVi
     public class FoodViewHolder extends RecyclerView.ViewHolder {
         @Bind(R.id.foodNameTextView) TextView mFoodNameTextView;
         @Bind(R.id.brandTextView) TextView mBrandTextView;
-        @Bind(R.id.ingredientsTextView) TextView mIngredientsTextView;
+        //@Bind(R.id.ingredientsTextView) TextView mIngredientsTextView;
 
         private Context mContext;
 
@@ -60,8 +60,7 @@ public class FoodListAdapter extends RecyclerView.Adapter<FoodListAdapter.FoodVi
 
         public void bindFood(Food food) {
             mFoodNameTextView.setText(food.getName());
-            mBrandTextView.setText(food.getName());
-            //mIngredientsTextView.setText(food.getIngredients());
+            mBrandTextView.setText(food.getBrand());
         }
     }
 }
