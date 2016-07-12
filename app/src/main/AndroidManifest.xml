@@ -10,7 +10,6 @@
         android:label="finicky grubber"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity
             android:name=".ui.MainActivity"
             android:theme="@style/NoActionBar">
@@ -45,7 +44,8 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.guest.grubbery.ui.MainActivity" />
         </activity>
-        <activity android:name=".ui.DictionaryActivity"></activity>
+        <activity android:name=".ui.DictionaryActivity" />
+        <activity android:name=".ui.FoodDetailActivity"></activity>
     </application>
 
 </manifest>

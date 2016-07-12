@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "324081335851",
+    "firebase_url": "https://finicky-grubber.firebaseio.com",
+    "project_id": "com.example.guest.grubbery",
+    "storage_bucket": "finicky-grubber.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:324081335851:android:f5aab960c5085782",
+        "android_client_info": {
+          "package_name": "com.example.guest.grubbery"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "324081335851-lflih4gjodrqtkmh9545d65s3mh81e8a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.guest.grubbery",
+            "certificate_hash": "E5080BD804F9D3464FE394A91F2B9ABBA8ACA434"
+          }
+        },
+        {
+          "client_id": "324081335851-4to2nllvbhmu5hp02naroam0en1aaia6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdjL_lu5FD28lLwWQCIfLEO7N5Sba7As8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "324081335851-4to2nllvbhmu5hp02naroam0en1aaia6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
