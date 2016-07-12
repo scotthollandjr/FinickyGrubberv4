@@ -44,7 +44,7 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <LinearLayout
                 android:orientation="vertical"
@@ -53,10 +53,10 @@
                 android:layout_alignParentTop="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:layout_above="@+id/saveFoodButton"
                 android:paddingLeft="30dp"
                 android:paddingTop="20dp"
-                android:paddingRight="30dp">
+                android:paddingRight="30dp"
+                android:id="@+id/linearLayout">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -71,16 +71,49 @@
 
             </LinearLayout>
 
-            <Button
-                android:layout_width="match_parent"
+
+
+             <RelativeLayout
+                android:id="@+id/InnerRelativeLayout"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Save food"
-                android:id="@+id/saveFoodButton"
-                android:layout_alignParentBottom="true"
-                android:background="@color/colorAccent"
-                android:textColor="@color/colorTextIcons"
-                android:textSize="15sp" />
+                android:layout_alignParentBottom="true" >
+
+                    <EditText
+                        android:hint="Look-Up Ingredient"
+                        android:id="@+id/lookUpText"
+                        android:layout_width="fill_parent"
+                        android:layout_toLeftOf="@id/defineButton"
+                        android:layout_height="wrap_content"
+                        android:padding="15dp"
+                        android:background="@color/colorTextIcons"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="15sp" />
+
+                    <Button
+                        android:text="Define"
+                        android:id="@+id/defineButton"
+                        android:layout_alignParentRight="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorAccent"
+                        android:textColor="@color/colorTextIcons"
+                        android:textSize="15sp" />
+
+                </RelativeLayout>
+
         </RelativeLayout>
+
+            <!--<Button-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Save food"-->
+                <!--android:id="@+id/saveFoodButton"-->
+                <!--android:layout_alignParentBottom="true"-->
+                <!--android:background="@color/colorAccent"-->
+                <!--android:textColor="@color/colorTextIcons"-->
+                <!--android:textSize="15sp" />-->
+
     </LinearLayout>
 
 </FrameLayout>

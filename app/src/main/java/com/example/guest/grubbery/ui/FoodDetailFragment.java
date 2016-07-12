@@ -1,6 +1,7 @@
 package com.example.guest.grubbery.ui;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -54,6 +55,13 @@ public class FoodDetailFragment extends Fragment {
         mBrandLabel.setText(mFood.getBrand());
 
         return view;
+    }
+
+    if(view == mDefinitionButton) {
+        String word = mDefinitionText.getText().toString();
+        Intent intent = new Intent(MainActivity.this, DictionaryActivity.class);
+        intent.putExtra("word", word);
+        startActivity(intent);
     }
 
 }

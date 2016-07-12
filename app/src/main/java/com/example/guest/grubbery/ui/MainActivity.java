@@ -55,11 +55,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Intent intent = new Intent(MainActivity.this, AccountActivity.class);
             startActivity(intent);
         }
-        if(view == mDefinitionButton) {
-            String word = mDefinitionText.getText().toString();
-            Intent intent = new Intent(MainActivity.this, DictionaryActivity.class);
-            intent.putExtra("word", word);
-            startActivity(intent);
-        }
     }
 }
