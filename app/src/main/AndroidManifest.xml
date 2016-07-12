@@ -39,7 +39,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.guest.grubbery.ui.MainActivity" />
         </activity>
-        <activity android:name=".ui.ResultListActivity">
+        <activity android:name=".ui.FoodListActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.guest.grubbery.ui.MainActivity" />

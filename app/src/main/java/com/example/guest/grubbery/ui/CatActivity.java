@@ -26,7 +26,7 @@ public class CatActivity extends AppCompatActivity implements View.OnClickListen
     @Override
     public void onClick(View view) {
         if(view == mSearchButton) {
-            Intent intent = new Intent(CatActivity.this, ResultListActivity.class);
+            Intent intent = new Intent(CatActivity.this, FoodListActivity.class);
             startActivity(intent);
         }
     }

@@ -26,7 +26,7 @@ public class DogActivity extends AppCompatActivity implements View.OnClickListen
     @Override
     public void onClick(View view) {
         if(view == mSearchButton) {
-            Intent intent = new Intent(DogActivity.this, ResultListActivity.class);
+            Intent intent = new Intent(DogActivity.this, FoodListActivity.class);
             startActivity(intent);
         }
     }
