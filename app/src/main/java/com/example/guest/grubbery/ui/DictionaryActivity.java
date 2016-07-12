@@ -48,8 +48,9 @@ public class DictionaryActivity extends AppCompatActivity {
                 try {
                     String jsonData = response.body().string();
                     if (response.isSuccessful()) {
+                        Log.d("CUBONE dict act", "jsonData =" + jsonData);
                         mWords = dictionaryService.processResults(response);
-                        Log.v("Dictionary Activity", mWords.size() + "");
+                        Log.v("CUBONE dict act", mWords.size() + "");
                     }
                 } catch (IOException e) {
                     e.printStackTrace();

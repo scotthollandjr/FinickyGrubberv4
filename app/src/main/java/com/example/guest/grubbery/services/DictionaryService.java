@@ -48,12 +48,14 @@ public class DictionaryService {
 
         try {
             String jsonData = response.body().string();
-            Log.d("CUBONE dict act", "jsonData =" + jsonData);
+            Log.d("CUBONE dict serv", "jsonData =" + jsonData);
             if (response.isSuccessful()) {
+                Log.d("CUBONE dict serv", "got into if");
                 JSONObject dictionaryJSON = new JSONObject(jsonData);
                 JSONArray wordsJSON = dictionaryJSON.getJSONArray("results");
 
                 for (int i = 0; i < wordsJSON.length(); i++) {
+                    Log.d("CUBONE dict serv", "got into forgit ");
                     JSONObject definitionJSON = wordsJSON.getJSONObject(i);
                     String name = definitionJSON.getString("headword");
                     String part = definitionJSON.getString("part_of_speech");
