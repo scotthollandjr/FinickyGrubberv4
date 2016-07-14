@@ -22,7 +22,6 @@ import okhttp3.Callback;
 import okhttp3.Response;
 
 public class DictionaryActivity extends AppCompatActivity {
-
     public static ArrayList<Word> mWords = new ArrayList<>();
     @Bind(R.id.defintionListView) ListView mDefinitionListView;
 
@@ -38,7 +37,7 @@ public class DictionaryActivity extends AppCompatActivity {
         findDefinition(word);
     }
 
-    public static void findDefinition(String word) {
+    public void findDefinition(String word) {
         final DictionaryService dictionaryService = new DictionaryService();
 
         dictionaryService.getDefinition(word, new Callback() {
@@ -51,21 +50,24 @@ public class DictionaryActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call call, Response response) {
                 mWords = dictionaryService.processResults(response);
+                //Log.d("CUBONE dict acti", "response " + response);
 
                 DictionaryActivity.this.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
 
-                        String[] foodNames = new String[mWords.size()];
-                        for (int i = 0; i < foodNames.length; i ++) {
-                            foodNames[i] = mWords.get(i).getWord();
+                        String[] wordNames = new String[mWords.size()];
+                        for (int i = 0; i < wordNames.length; i ++) {
+                            wordNames[i] = mWords.get(i).getWord();
                         }
 
-                        ArrayAdapter adapter = new ArrayAdapter(DictionaryActivity.this, android.R.layout.simple_list_item_1, foodNames);
+                        ArrayAdapter adapter = new ArrayAdapter(DictionaryActivity.this, android.R.layout.simple_list_item_1, wordNames);
                         mDefinitionListView.setAdapter(adapter);
 
                         for (Word word : mWords) {
-                            Log.d("CUBONE dict acti", "Name: " + word.getWord());
+                            Log.d("CUBONE dict acti", word.getWord());
+                            Log.d("CUBONE dict acti", word.getPart());
+                            Log.d("CUBONE dict acti", word.getDefinition());
                         }
                     }
                 });

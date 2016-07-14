@@ -48,22 +48,23 @@ public class DictionaryService {
 
         try {
             String jsonData = response.body().string();
-            Log.d("CUBONE dict serv", "jsonData =" + jsonData);
             if (response.isSuccessful()) {
 
                 JSONObject dictionaryJSON = new JSONObject(jsonData);
-                Log.d("CUBONE dict serv", "got into if" );
                 JSONArray wordsJSON = dictionaryJSON.getJSONArray("results");
 
                 for (int i = 0; i < wordsJSON.length(); i++) {
-                    Log.d("CUBONE dict serv", "got into forgit ");
                     JSONObject definitionJSON = wordsJSON.getJSONObject(i);
                     String name = definitionJSON.getString("headword");
                     String part = definitionJSON.getString("part_of_speech");
-                    String definition = definitionJSON.getString("definition");
+                    //String definition = definitionJSON.getJSONArray("senses").getString("definition");
+                    String definition = "poop";
+                    //Log.d("CUBONE dict servi", definition + "");
 
-                    Word word = new Word(name, part, definition);
-                    words.add(word);
+                    if ( (part.equals("noun")) && (!(name.equals(null))) && (!(definition.equals(null))) ) {
+                        Word word = new Word(name, part, definition);
+                        words.add(word);
+                    }
                 }
             }
         } catch (IOException e) {

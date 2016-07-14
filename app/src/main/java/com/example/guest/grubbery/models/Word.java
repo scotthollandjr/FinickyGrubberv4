@@ -1,8 +1,11 @@
 package com.example.guest.grubbery.models;
 
+import org.parceler.Parcel;
+
 /**
  * Created by Guest on 7/12/16.
  */
+@Parcel
 public class Word {
     private String mWord;
     private String mPart;

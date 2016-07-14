@@ -21,10 +21,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Bind(R.id.catButton) Button mCatButton;
     @Bind(R.id.accountButton) Button mAccountButton;
 
-    @Bind(R.id.definitionButton) Button mDefinitionButton;
-    @Bind(R.id.definitionText) EditText mDefinitionText;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,7 +34,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mDogButton.setOnClickListener(this);
         mCatButton.setOnClickListener(this);
         mAccountButton.setOnClickListener(this);
-        mDefinitionButton.setOnClickListener(this);
     }
 
     @Override

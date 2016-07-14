@@ -45,7 +45,7 @@ public class FoodDetailFragment extends Fragment implements View.OnClickListener
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mFood =Parcels.unwrap(getArguments().getParcelable("food"));
+        mFood = Parcels.unwrap(getArguments().getParcelable("food"));
     }
 
 
