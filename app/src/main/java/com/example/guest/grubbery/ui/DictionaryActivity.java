@@ -56,19 +56,19 @@ public class DictionaryActivity extends AppCompatActivity {
                     @Override
                     public void run() {
 
-                        String[] wordNames = new String[mWords.size()];
-                        for (int i = 0; i < wordNames.length; i ++) {
-                            wordNames[i] = mWords.get(i).getWord();
+                        String[] entries = new String[mWords.size()];
+                        for (int i = 0; i < entries.length; i ++) {
+                            entries[i] = mWords.get(i).getWord() + ": " + mWords.get(i).getDefinition();
                         }
 
-                        ArrayAdapter adapter = new ArrayAdapter(DictionaryActivity.this, android.R.layout.simple_list_item_1, wordNames);
+                        ArrayAdapter adapter = new ArrayAdapter(DictionaryActivity.this, android.R.layout.simple_list_item_1, entries);
                         mDefinitionListView.setAdapter(adapter);
 
-                        for (Word word : mWords) {
-                            Log.d("CUBONE dict acti", word.getWord());
-                            Log.d("CUBONE dict acti", word.getPart());
-                            Log.d("CUBONE dict acti", word.getDefinition());
-                        }
+//                        for (Word word : mWords) {
+//                            Log.d("CUBONE dict acti", word.getWord());
+//                            Log.d("CUBONE dict acti", word.getPart());
+//                            Log.d("CUBONE dict acti", word.getDefinition());
+//                        }
                     }
                 });
             }
