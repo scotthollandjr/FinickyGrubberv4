@@ -85,7 +85,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="create an account"
+        android:text="my saved foods"
         android:id="@+id/accountButton"
         android:background="@color/colorAccent"
         android:layout_alignBottom="@+id/imageView"

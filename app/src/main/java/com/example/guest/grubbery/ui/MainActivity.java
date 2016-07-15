@@ -55,6 +55,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             logout();
             return true;
         }
+        if (id == R.id.action_login) {
+            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+            startActivity(intent);
+        }
+        if (id == R.id.action_account) {
+            Intent intent = new Intent(MainActivity.this, AccountActivity.class);
+            startActivity(intent);
+        }
         return super.onOptionsItemSelected(item);
     }
 
@@ -77,7 +85,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(intent);
         }
         if(view == mAccountButton) {
-            Intent intent = new Intent(MainActivity.this, AccountActivity.class);
+            Intent intent = new Intent(MainActivity.this, UserAccountActivity.class);
             startActivity(intent);
         }
     }

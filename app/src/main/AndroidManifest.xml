@@ -7,14 +7,12 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="finicky grubber"
+        android:label=""
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".ui.MainActivity">
+        <activity android:name=".ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -43,9 +41,22 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.guest.grubbery.ui.MainActivity" />
         </activity>
-        <activity android:name=".ui.DictionaryActivity" />
-        <activity android:name=".ui.FoodDetailActivity" />
-        <activity android:name=".ui.LoginActivity"></activity>
+        <activity android:name=".ui.DictionaryActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.guest.grubbery.ui.MainActivity" />
+        </activity>
+        <activity android:name=".ui.FoodDetailActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.guest.grubbery.ui.MainActivity" />
+        </activity>
+        <activity android:name=".ui.LoginActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.guest.grubbery.ui.MainActivity" />
+        </activity>
+        <activity android:name=".ui.UserAccountActivity"></activity>
     </application>
 
 </manifest>
