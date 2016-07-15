@@ -27,6 +27,7 @@ public class FoodDetailFragment extends Fragment implements View.OnClickListener
     @Bind(R.id.brandTextView) TextView mBrandLabel;
     @Bind(R.id.lookUpText) EditText mLookUpLabel;
     @Bind(R.id.defineButton) Button mDefineButton;
+    @Bind(R.id.ingredientsTextView) TextView mIngredientsLabel;
 
     private Food mFood;
 
@@ -59,6 +60,7 @@ public class FoodDetailFragment extends Fragment implements View.OnClickListener
 
         mFoodNameLabel.setText(mFood.getName());
         mBrandLabel.setText(mFood.getBrand());
+        mIngredientsLabel.setText(android.text.TextUtils.join(", ", mFood.getIngredients()));
 
         return view;
     }
