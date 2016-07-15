@@ -37,7 +37,7 @@ public class FirebaseFoodViewHolder extends RecyclerView.ViewHolder implements V
         itemView.setOnClickListener(this);
     }
 
-    public void bindRestaurant(Food food) {
+    public void bindFood(Food food) {
         TextView nameTextView = (TextView) mView.findViewById(R.id.foodNameTextView);
         TextView brandTextView = (TextView) mView.findViewById(R.id.brandTextView);
         TextView ingredientsTextView = (TextView) mView.findViewById(R.id.ingredientsTextView);

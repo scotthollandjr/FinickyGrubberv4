@@ -1,6 +1,7 @@
 package com.example.guest.grubbery.ui;
 
 import android.content.Intent;
+import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -17,6 +18,7 @@ import com.example.guest.grubbery.models.Food;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
@@ -26,6 +28,7 @@ import butterknife.ButterKnife;
 
 public class FoodListActivity extends AppCompatActivity {
     private DatabaseReference mFoodReference;
+    private Query mFoodQuery;
     private FirebaseRecyclerAdapter mFirebaseAdapter;
 
     @Bind(R.id.recyclerView) RecyclerView mRecyclerView;
@@ -38,19 +41,25 @@ public class FoodListActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         Intent intent = getIntent();
-        String type = intent.getStringExtra("type");
+        String dogOrCat = intent.getStringExtra("dogOrCat");
+        String mBrand = intent.getStringExtra("brand");
+        String mType = intent.getStringExtra("type");
+        String mWith = intent.getStringExtra("with");
+        String mWithout = intent.getStringExtra("without");
+        String mAge = intent.getStringExtra("age");
 
-        mFoodReference = FirebaseDatabase.getInstance().getReference(type);
+        mFoodReference = FirebaseDatabase.getInstance().getReference(dogOrCat);
+        mFoodQuery = mFoodReference.orderByChild("brand").equalTo(mBrand);
         setUpFirebaseAdapter();
     }
 
     public void setUpFirebaseAdapter() {
         mFirebaseAdapter = new FirebaseRecyclerAdapter<Food, FirebaseFoodViewHolder>
-                (Food.class, R.layout.food_list_item, FirebaseFoodViewHolder.class, mFoodReference) {
+                (Food.class, R.layout.food_list_item, FirebaseFoodViewHolder.class, mFoodQuery) {
 
             @Override
             protected void populateViewHolder(FirebaseFoodViewHolder viewHolder, Food model, int position) {
-                viewHolder.bindRestaurant(model);
+                viewHolder.bindFood(model);
             }
         };
         mRecyclerView.setHasFixedSize(true);

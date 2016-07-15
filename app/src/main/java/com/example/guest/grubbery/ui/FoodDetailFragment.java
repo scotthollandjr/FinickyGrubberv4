@@ -10,9 +10,13 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.guest.grubbery.Constants;
 import com.example.guest.grubbery.R;
 import com.example.guest.grubbery.models.Food;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import org.parceler.Parcels;
 
@@ -28,6 +32,7 @@ public class FoodDetailFragment extends Fragment implements View.OnClickListener
     @Bind(R.id.lookUpText) EditText mLookUpLabel;
     @Bind(R.id.defineButton) Button mDefineButton;
     @Bind(R.id.ingredientsTextView) TextView mIngredientsLabel;
+    @Bind(R.id.saveButton) Button mSaveButton;
 
     private Food mFood;
 
@@ -57,6 +62,7 @@ public class FoodDetailFragment extends Fragment implements View.OnClickListener
         ButterKnife.bind(this, view);
 
         mDefineButton.setOnClickListener(this);
+        mSaveButton.setOnClickListener(this);
 
         mFoodNameLabel.setText(mFood.getName());
         mBrandLabel.setText(mFood.getBrand());
@@ -72,6 +78,13 @@ public class FoodDetailFragment extends Fragment implements View.OnClickListener
             Intent intent = new Intent(getActivity(), DictionaryActivity.class);
             intent.putExtra("word", word);
             startActivity(intent);
+        }
+        if(view == mSaveButton) {
+            DatabaseReference foodRef = FirebaseDatabase
+                    .getInstance()
+                    .getReference(Constants.FIREBASE_CHILD_SAVED_FOODS);
+            foodRef.push().setValue(mFood);
+            Toast.makeText(getContext(), "Saved", Toast.LENGTH_SHORT).show();
         }
     }
 }
