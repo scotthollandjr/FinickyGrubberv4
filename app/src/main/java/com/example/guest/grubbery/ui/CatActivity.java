@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.guest.grubbery.Constants;
 import com.example.guest.grubbery.R;
 
 import butterknife.Bind;
@@ -27,6 +28,7 @@ public class CatActivity extends AppCompatActivity implements View.OnClickListen
     public void onClick(View view) {
         if(view == mSearchButton) {
             Intent intent = new Intent(CatActivity.this, FoodListActivity.class);
+            intent.putExtra("type", Constants.FIREBASE_CHILD_CAT_FOODS);
             startActivity(intent);
         }
     }
