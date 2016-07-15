@@ -1,6 +1,6 @@
 # Finicky Grubber
 
-Ongoing project for Epicodus Android Development course, week 1 Code Review (User Interface Basics).
+Ongoing project for Epicodus Android Development course, week 3 Code Review (Data Persistence).
 
 This project will demonstrate proficiency in Java and Android Development.
 
