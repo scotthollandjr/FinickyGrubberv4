@@ -40,10 +40,24 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/inputUsername"
+        android:layout_above="@+id/inputEmail"
+        android:layout_centerHorizontal="true"
+        android:background="@color/colorPrimaryText"
+        android:hint="Choose a username:"
+        android:height="50dp"
+        android:padding="10dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="5dp"  />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/inputEmail"
         android:layout_above="@+id/inputPassword"
         android:layout_centerHorizontal="true"
         android:background="@color/colorPrimaryText"
-        android:hint="Username:"
+        android:hint="Enter your email:"
         android:height="50dp"
         android:padding="10dp"
         android:layout_marginLeft="8dp"
@@ -57,7 +71,7 @@
         android:layout_above="@+id/inputPassword2"
         android:layout_centerHorizontal="true"
         android:background="@color/colorPrimaryText"
-        android:hint="Password:"
+        android:hint="Choose a password:"
         android:inputType="textPassword"
         android:height="50dp"
         android:padding="10dp"
@@ -69,7 +83,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/inputPassword2"
-        android:layout_above="@+id/inputPetName"
+        android:layout_above="@+id/createButton"
         android:layout_centerHorizontal="true"
         android:background="@color/colorPrimaryText"
         android:hint="Confirm Password:"
@@ -79,34 +93,6 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="5dp"  />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/inputPetName"
-        android:layout_above="@+id/inputBreed"
-        android:layout_centerHorizontal="true"
-        android:background="@color/colorPrimaryText"
-        android:hint="Pet's Name:"
-        android:height="50dp"
-        android:padding="10dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="5dp"  />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/inputBreed"
-        android:layout_above="@+id/createButton"
-        android:layout_centerHorizontal="true"
-        android:background="@color/colorPrimaryText"
-        android:hint="Pet's Breed:"
-        android:height="50dp"
-        android:padding="10dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"  />
 
     <Button
         android:layout_width="match_parent"

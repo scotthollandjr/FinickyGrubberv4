@@ -45,7 +45,8 @@
                 android:value="com.example.guest.grubbery.ui.MainActivity" />
         </activity>
         <activity android:name=".ui.DictionaryActivity" />
-        <activity android:name=".ui.FoodDetailActivity"></activity>
+        <activity android:name=".ui.FoodDetailActivity" />
+        <activity android:name=".ui.LoginActivity"></activity>
     </application>
 
 </manifest>
