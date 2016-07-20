@@ -30,6 +30,12 @@ public class FoodListActivity extends AppCompatActivity {
     private DatabaseReference mFoodReference;
     private Query mFoodQuery;
     private FirebaseRecyclerAdapter mFirebaseAdapter;
+    private String mBrand;
+    private String mType;
+    private String mWith;
+    private String mWithout;
+    private String mAge;
+
 
     @Bind(R.id.recyclerView) RecyclerView mRecyclerView;
 
@@ -42,24 +48,42 @@ public class FoodListActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         String dogOrCat = intent.getStringExtra("dogOrCat");
-        String mBrand = intent.getStringExtra("brand");
-        String mType = intent.getStringExtra("type");
-        String mWith = intent.getStringExtra("with");
-        String mWithout = intent.getStringExtra("without");
-        String mAge = intent.getStringExtra("age");
+        mBrand = intent.getStringExtra("brand");
+        mType = intent.getStringExtra("type");
+        mWith = intent.getStringExtra("with");
+        mWithout = intent.getStringExtra("without");
+        mAge = intent.getStringExtra("age");
 
         mFoodReference = FirebaseDatabase.getInstance().getReference(dogOrCat);
-        mFoodQuery = mFoodReference.orderByChild("brand").equalTo(mBrand);
         setUpFirebaseAdapter();
+
+
+//        if (mBrand != "") {
+//
+//        } else if (mType != "") {
+//
+//        } else if (mWith != "") {
+//
+//        } else if (mWithout != "") {
+//
+//        } else if (mAge != "") {
+//
+//        } else {
+//
+//        }
+
     }
 
     public void setUpFirebaseAdapter() {
         mFirebaseAdapter = new FirebaseRecyclerAdapter<Food, FirebaseFoodViewHolder>
-                (Food.class, R.layout.food_list_item, FirebaseFoodViewHolder.class, mFoodQuery) {
+                (Food.class, R.layout.food_list_item, FirebaseFoodViewHolder.class, mFoodReference) {
+
+
 
             @Override
             protected void populateViewHolder(FirebaseFoodViewHolder viewHolder, Food model, int position) {
                 viewHolder.bindFood(model);
+
             }
         };
         mRecyclerView.setHasFixedSize(true);
