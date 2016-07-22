@@ -36,9 +36,11 @@ public class FoodListActivity extends AppCompatActivity {
     private String dogOrCat;
     private String mBrand;
     private String mType;
-    private String mWith;
-    private String mWithout;
+    private String[] mWith;
+    private String[] mWithout;
     private String mAge;
+    private String withRaw;
+    private String withoutRaw;
 
 
 
@@ -58,8 +60,10 @@ public class FoodListActivity extends AppCompatActivity {
         dogOrCat = intent.getStringExtra("dogOrCat");
         mBrand = intent.getStringExtra("brand");
         mType = intent.getStringExtra("type");
-        mWith = intent.getStringExtra("with");
-        mWithout = intent.getStringExtra("without");
+        withRaw = intent.getStringExtra("with");
+        mWith = withRaw.split(",");
+        withoutRaw = intent.getStringExtra("without");
+        mWithout = withoutRaw.split(",");
         mAge = intent.getStringExtra("age");
 
         mFoodReference = FirebaseDatabase.getInstance().getReference(dogOrCat);
@@ -71,26 +75,23 @@ public class FoodListActivity extends AppCompatActivity {
                     Food newFood = ds.getValue(Food.class);
                     mFoods.add(newFood);
                     queryFoods.add(newFood);
-                    Log.d("CUBONE", "brand: " + newFood.getBrand());
-                    Log.d("CUBONE", "name: " + newFood.getName());
-                    Log.d("CUBONE", "ingredients: " + newFood.getIngredients());
 
                     if (!mBrand.isEmpty()) {
-                        Log.d("CUBONE", "got into brand");
                         if (!(newFood.getName().equals(mBrand))) {
                             queryFoods.remove(newFood);
                         }
                     }
 
-                    if (!mWith.isEmpty()) {
-                        Log.d("CUBONE", "got into with");
-                        if (!(newFood.getIngredients().contains(mWith))) {
-                            queryFoods.remove(newFood);
+                    if (!withRaw.isEmpty()) {
+                        for (String ingredient : mWith) {
+                            if (!(newFood.getIngredients().contains(ingredient.trim()))) {
+                                queryFoods.remove(newFood);
+                                Log.d("CUBONE", ingredient + "");
+                            }
                         }
                     }
 
-                    if (!mWithout.isEmpty()) {
-                        Log.d("CUBONE", "got into without");
+                    if (!withoutRaw.isEmpty()) {
                         if (newFood.getIngredients().contains(mWithout)) {
                             queryFoods.remove(newFood);
                         }
