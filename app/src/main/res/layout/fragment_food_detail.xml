@@ -15,7 +15,7 @@
             android:layout_height="wrap_content"
             android:background="@android:color/white"
             android:paddingTop="20dp"
-            android:paddingLeft="10dp"
+            android:paddingLeft="18dp"
             android:paddingRight="10dp"
             android:paddingBottom="20dp">
 
@@ -53,9 +53,9 @@
                 android:layout_alignParentTop="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:paddingLeft="30dp"
+                android:paddingLeft="18dp"
                 android:paddingTop="20dp"
-                android:paddingRight="30dp"
+                android:paddingRight="18dp"
                 android:id="@+id/linearLayout">
 
                 <RelativeLayout
@@ -117,13 +117,23 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Ingredients:"
+                    android:textColor="@color/colorTextIcons"
+                    android:textSize="17sp"
+                    android:paddingTop="10dp"
+                    android:textStyle="bold"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ingredients:"
                     android:id="@+id/ingredientsTextView"
                     android:textColor="@color/colorTextIcons"
                     android:textSize="15sp"
                     android:textStyle="bold"
                     android:layout_marginBottom="10dp"
                     android:gravity="center"
-                    android:paddingTop="10sp" />
+                    android:paddingTop="8sp" />
 
             </LinearLayout>
 
