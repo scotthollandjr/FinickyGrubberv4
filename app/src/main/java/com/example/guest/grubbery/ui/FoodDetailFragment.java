@@ -26,12 +26,15 @@ import butterknife.ButterKnife;
 public class FoodDetailFragment extends Fragment implements View.OnClickListener {
     @Bind(R.id.foodNameTextView) TextView mFoodNameLabel;
     @Bind(R.id.brandTextView) TextView mBrandLabel;
-//    @Bind(R.id.lookUpText) EditText mLookUpLabel;
-//    @Bind(R.id.defineButton) Button mDefineButton;
-    @Bind(R.id.ingredientsTextView) TextView mIngredientsLabel;
     @Bind(R.id.saveButton) Button mSaveButton;
+    @Bind(R.id.ingredientsTextView) TextView mIngredientsLabel;
+
 
     private Food mFood;
+
+    //    @Bind(R.id.lookUpText) EditText mLookUpLabel;
+    //    @Bind(R.id.defineButton) Button mDefineButton;
+
 
     public static FoodDetailFragment newInstance(Food food) {
         FoodDetailFragment foodDetailFragment = new FoodDetailFragment();

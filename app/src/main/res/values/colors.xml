@@ -6,6 +6,6 @@
     <color name="colorAccent">#c83299cc</color>
     <color name="colorPrimaryText">#c8cfcfcf</color>
     <color name="colorSecondaryText">#240f06</color>
-    <color name="colorTextIcons">#CFCFCF</color>
+    <color name="colorTextIcons">#cfcfcf</color>
     <color name="colorDivider">#B6B6B6</color>
 </resources>

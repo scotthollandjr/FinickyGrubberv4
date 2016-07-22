@@ -58,6 +58,61 @@
                 android:paddingRight="30dp"
                 android:id="@+id/linearLayout">
 
+                <RelativeLayout
+                    android:id="@+id/relativeLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentBottom="true"
+                    android:layout_gravity="right">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="Grain Free"
+                        android:id="@+id/grainTextView"
+                        android:textColor="@color/colorTextIcons"
+                        android:layout_gravity="right" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="Manufactured in: Country"
+                        android:id="@+id/countryTextView"
+                        android:textColor="@color/colorTextIcons"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/relativeLayout2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentBottom="true"
+                    android:layout_gravity="right">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Dry Kibble"
+                        android:id="@+id/typeTextView"
+                        android:textColor="@color/colorTextIcons"
+                        android:paddingTop="5sp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="000 Kcals/cup"
+                        android:id="@+id/kcalTextView"
+                        android:textColor="@color/colorTextIcons"
+                        android:paddingTop="5sp"
+                        android:layout_gravity="right"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true" />
+
+                </RelativeLayout>
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -67,7 +122,8 @@
                     android:textSize="15sp"
                     android:textStyle="bold"
                     android:layout_marginBottom="10dp"
-                    android:gravity="center" />
+                    android:gravity="center"
+                    android:paddingTop="10sp" />
 
             </LinearLayout>
 
