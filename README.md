@@ -1,6 +1,6 @@
 # Finicky Grubber
 
-Ongoing project for Epicodus Android Development course, week 3 Code Review (Data Persistence).
+Ongoing project for Epicodus Android Development course, week 4 Code Review (Gestures, Animations & Flexible UIs).
 
 This project will demonstrate proficiency in Java and Android Development.
 
@@ -13,7 +13,7 @@ You will need the following things properly installed on your computer.
 
 ## Installation
 
-* `git clone <https://github.com/theAppanaut/FinickyGrubberv3.git>` this repository
+* `git clone <https://github.com/theAppanaut/FinickyGrubberv4.git>` this repository
 * change into the new directory
 * open in Android Studios
 
