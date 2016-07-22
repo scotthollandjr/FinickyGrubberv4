@@ -32,7 +32,6 @@ public class DogActivity extends AppCompatActivity implements View.OnClickListen
     @Bind(R.id.withoutSelect) EditText mWithoutSelect;
     @Bind(R.id.ageSelect) EditText mAgeSelect;
     ArrayList<Food> mFoods = new ArrayList<>();
-    private DatabaseReference mFoodReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
