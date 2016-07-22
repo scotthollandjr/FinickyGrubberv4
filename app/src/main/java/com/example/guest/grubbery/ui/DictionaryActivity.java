@@ -50,7 +50,6 @@ public class DictionaryActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call call, Response response) {
                 mWords = dictionaryService.processResults(response);
-                //Log.d("CUBONE dict acti", "response " + response);
 
                 DictionaryActivity.this.runOnUiThread(new Runnable() {
                     @Override
@@ -63,12 +62,6 @@ public class DictionaryActivity extends AppCompatActivity {
 
                         ArrayAdapter adapter = new ArrayAdapter(DictionaryActivity.this, android.R.layout.simple_list_item_1, entries);
                         mDefinitionListView.setAdapter(adapter);
-
-//                        for (Word word : mWords) {
-//                            Log.d("CUBONE dict acti", word.getWord());
-//                            Log.d("CUBONE dict acti", word.getPart());
-//                            Log.d("CUBONE dict acti", word.getDefinition());
-//                        }
                     }
                 });
             }

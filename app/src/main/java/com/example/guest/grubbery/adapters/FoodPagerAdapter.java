@@ -9,9 +9,7 @@ import com.example.guest.grubbery.ui.FoodDetailFragment;
 
 import java.util.ArrayList;
 
-/**
- * Created by Guest on 7/12/16.
- */
+
 public class FoodPagerAdapter extends FragmentPagerAdapter {
     private ArrayList<Food> mFoods;
 

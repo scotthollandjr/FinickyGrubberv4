@@ -33,7 +33,7 @@ public class Food {
 
     public void setName(String name) { this.name = name; }
 
-    public void setBrand(String brand) { this.name = brand; }
+    public void setBrand(String brand) { this.brand = brand; }
 
     public void setIngredients(List<String> ingredients) { this.ingredients = ingredients; }
 

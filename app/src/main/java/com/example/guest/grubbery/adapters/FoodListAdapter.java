@@ -20,9 +20,7 @@ import java.util.ArrayList;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-/**
- * Created by Guest on 7/11/16.
- */
+
 public class FoodListAdapter extends RecyclerView.Adapter<FoodListAdapter.FoodViewHolder> {
     private ArrayList<Food> mFoods = new ArrayList<>();
     private Context mContext;

@@ -59,12 +59,12 @@ public class DictionaryService {
                     String name = definitionJSON.getString("headword");
                     String part = definitionJSON.getString("part_of_speech");
                     JSONObject n = definitionJSON.getJSONArray("senses").getJSONObject(0);
-                    //String d = n.getJSONObject("definition").toString();
+                    String d = n.getJSONObject("definition").toString();
                     Log.d("CUBONE dict servi", n + "");
                     //String definition = n.get(0).toString();
                     //Log.d("CUBONE dict servi", definition + "");
                     //String definition = n.getString("definition").toString();
-                    String definition = "Lorem ipsum sample definition. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.";
+                    String definition = "Lorem ipsum sample definition em aperiam.";
                     //Log.d("CUBONE dict servi", definition + "");
 
                     if ( (part.equals("noun")) && (!(name.equals(null))) && (!(definition.equals(null))) ) {

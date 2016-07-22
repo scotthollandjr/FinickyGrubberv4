@@ -26,8 +26,8 @@ import butterknife.ButterKnife;
 public class FoodDetailFragment extends Fragment implements View.OnClickListener {
     @Bind(R.id.foodNameTextView) TextView mFoodNameLabel;
     @Bind(R.id.brandTextView) TextView mBrandLabel;
-    @Bind(R.id.lookUpText) EditText mLookUpLabel;
-    @Bind(R.id.defineButton) Button mDefineButton;
+//    @Bind(R.id.lookUpText) EditText mLookUpLabel;
+//    @Bind(R.id.defineButton) Button mDefineButton;
     @Bind(R.id.ingredientsTextView) TextView mIngredientsLabel;
     @Bind(R.id.saveButton) Button mSaveButton;
 
@@ -58,7 +58,7 @@ public class FoodDetailFragment extends Fragment implements View.OnClickListener
         View view = inflater.inflate(R.layout.fragment_food_detail, container, false);
         ButterKnife.bind(this, view);
 
-        mDefineButton.setOnClickListener(this);
+//        mDefineButton.setOnClickListener(this);
         mSaveButton.setOnClickListener(this);
 
         mFoodNameLabel.setText(mFood.getName());
@@ -70,12 +70,12 @@ public class FoodDetailFragment extends Fragment implements View.OnClickListener
 
     @Override
     public void onClick(View view) {
-        if(view == mDefineButton) {
-            String word = mLookUpLabel.getText().toString();
-            Intent intent = new Intent(getActivity(), DictionaryActivity.class);
-            intent.putExtra("word", word);
-            startActivity(intent);
-        }
+//        if(view == mDefineButton) {
+//            String word = mLookUpLabel.getText().toString();
+//            Intent intent = new Intent(getActivity(), DictionaryActivity.class);
+//            intent.putExtra("word", word);
+//            startActivity(intent);
+//        }
         if(view == mSaveButton) {
             DatabaseReference foodRef = FirebaseDatabase
                     .getInstance()

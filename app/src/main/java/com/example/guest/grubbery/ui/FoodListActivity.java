@@ -76,9 +76,10 @@ public class FoodListActivity extends AppCompatActivity {
                     Food newFood = ds.getValue(Food.class);
                     mFoods.add(newFood);
                     queryFoods.add(newFood);
+                    Log.d("cubby", newFood.getBrand() + "");
 
                     if (!mBrand.isEmpty()) {
-                        if (!(newFood.getName().equals(mBrand))) {
+                        if (!(newFood.getBrand().equals(mBrand))) {
                             queryFoods.remove(newFood);
                         }
                     }
