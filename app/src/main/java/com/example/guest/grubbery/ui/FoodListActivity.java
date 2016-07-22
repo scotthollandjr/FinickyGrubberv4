@@ -25,6 +25,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.concurrent.RunnableFuture;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -42,9 +43,9 @@ public class FoodListActivity extends AppCompatActivity {
     private String withRaw;
     private String withoutRaw;
 
-
-
     @Bind(R.id.recyclerView) RecyclerView mRecyclerView;
+
+    private FoodListAdapter mFoodAdapter;
 
     ArrayList<Food> mFoods = new ArrayList<>();
     ArrayList<Food> queryFoods = new ArrayList<>();
@@ -98,7 +99,7 @@ public class FoodListActivity extends AppCompatActivity {
                         }
                     }
                 }
-                Log.d("CUBONE", queryFoods.size() + "");
+                printFoods(queryFoods);
             }
 
 
@@ -109,6 +110,19 @@ public class FoodListActivity extends AppCompatActivity {
         });
 
         //Log.d("CUBONE", "queryFoods: " + queryFoods.size());
+    }
+
+    public void printFoods(ArrayList<Food> foods) {
+        FoodListActivity.this.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                mFoodAdapter = new FoodListAdapter(getApplicationContext(), queryFoods);
+                mRecyclerView.setAdapter(mFoodAdapter);
+                RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(FoodListActivity.this);
+                mRecyclerView.setLayoutManager(layoutManager);
+                mRecyclerView.setHasFixedSize(true);
+            }
+        });
     }
 
 
@@ -128,7 +142,7 @@ public class FoodListActivity extends AppCompatActivity {
 //        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 //        mRecyclerView.setAdapter(mFirebaseAdapter);
 //    }
-
+//
 //    @Override
 //    protected void onDestroy() {
 //        super.onDestroy();
