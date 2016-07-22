@@ -3,12 +3,23 @@ package com.example.guest.grubbery.ui;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.guest.grubbery.Constants;
 import com.example.guest.grubbery.R;
+import com.example.guest.grubbery.models.Food;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import org.parceler.Parcels;
+
+import java.util.ArrayList;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -20,6 +31,8 @@ public class DogActivity extends AppCompatActivity implements View.OnClickListen
     @Bind(R.id.withSelect) EditText mWithSelect;
     @Bind(R.id.withoutSelect) EditText mWithoutSelect;
     @Bind(R.id.ageSelect) EditText mAgeSelect;
+    ArrayList<Food> mFoods = new ArrayList<>();
+    private DatabaseReference mFoodReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

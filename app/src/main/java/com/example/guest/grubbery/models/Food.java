@@ -1,13 +1,12 @@
 package com.example.guest.grubbery.models;
 
+import android.os.Parcelable;
+
 import org.parceler.Parcel;
 
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Guest on 7/11/16.
- */
 @Parcel
 public class Food {
     private String name;
@@ -31,4 +30,11 @@ public class Food {
     }
 
     public List<String> getIngredients() { return ingredients; }
+
+    public void setName(String name) { this.name = name; }
+
+    public void setBrand(String brand) { this.name = brand; }
+
+    public void setIngredients(List<String> ingredients) { this.ingredients = ingredients; }
+
 }

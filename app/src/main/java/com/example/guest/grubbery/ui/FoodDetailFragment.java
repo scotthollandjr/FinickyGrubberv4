@@ -23,9 +23,6 @@ import org.parceler.Parcels;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class FoodDetailFragment extends Fragment implements View.OnClickListener {
     @Bind(R.id.foodNameTextView) TextView mFoodNameLabel;
     @Bind(R.id.brandTextView) TextView mBrandLabel;

@@ -16,9 +16,12 @@ import com.example.guest.grubbery.adapters.FirebaseFoodViewHolder;
 import com.example.guest.grubbery.adapters.FoodListAdapter;
 import com.example.guest.grubbery.models.Food;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
@@ -30,6 +33,7 @@ public class FoodListActivity extends AppCompatActivity {
     private DatabaseReference mFoodReference;
     private Query mFoodQuery;
     private FirebaseRecyclerAdapter mFirebaseAdapter;
+    private String dogOrCat;
     private String mBrand;
     private String mType;
     private String mWith;
@@ -37,7 +41,11 @@ public class FoodListActivity extends AppCompatActivity {
     private String mAge;
 
 
+
     @Bind(R.id.recyclerView) RecyclerView mRecyclerView;
+
+    ArrayList<Food> mFoods = new ArrayList<>();
+    ArrayList<Food> queryFoods = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +55,7 @@ public class FoodListActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         Intent intent = getIntent();
-        String dogOrCat = intent.getStringExtra("dogOrCat");
+        dogOrCat = intent.getStringExtra("dogOrCat");
         mBrand = intent.getStringExtra("brand");
         mType = intent.getStringExtra("type");
         mWith = intent.getStringExtra("with");
@@ -55,45 +63,74 @@ public class FoodListActivity extends AppCompatActivity {
         mAge = intent.getStringExtra("age");
 
         mFoodReference = FirebaseDatabase.getInstance().getReference(dogOrCat);
-        setUpFirebaseAdapter();
 
+        mFoodReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot ds : dataSnapshot.getChildren()) {
+                    Food newFood = ds.getValue(Food.class);
+                    mFoods.add(newFood);
+                    queryFoods.add(newFood);
+                    Log.d("CUBONE", queryFoods.size() + "");
+                    Log.d("CUBONE", newFood.getBrand());
+                    Log.d("CUBONE", newFood.getBrand());
+                    Log.d("CUBONE", newFood.getBrand());
 
-//        if (mBrand != "") {
-//
-//        } else if (mType != "") {
-//
-//        } else if (mWith != "") {
-//
-//        } else if (mWithout != "") {
-//
-//        } else if (mAge != "") {
-//
-//        } else {
-//
-//        }
+                    if (!mBrand.isEmpty()) {
+                        Log.d("CUBONE", "got into brand");
+                        if (newFood.getBrand() != mBrand ) {
+                            queryFoods.remove(newFood);
+                        }
+                    }
 
-    }
+                    if (!mWith.isEmpty()) {
+                        Log.d("CUBONE", "got into with");
+                        if (!(newFood.getIngredients().contains(mWith))) {
+                            queryFoods.remove(newFood);
+                        }
+                    }
 
-    public void setUpFirebaseAdapter() {
-        mFirebaseAdapter = new FirebaseRecyclerAdapter<Food, FirebaseFoodViewHolder>
-                (Food.class, R.layout.food_list_item, FirebaseFoodViewHolder.class, mFoodReference) {
-
+                    if (!mWithout.isEmpty()) {
+                        Log.d("CUBONE", "got into without");
+                        if (newFood.getIngredients().contains(mWithout)) {
+                            queryFoods.remove(newFood);
+                        }
+                    }
+                }
+                Log.d("CUBONE", queryFoods.size() + "");
+            }
 
 
             @Override
-            protected void populateViewHolder(FirebaseFoodViewHolder viewHolder, Food model, int position) {
-                viewHolder.bindFood(model);
+            public void onCancelled(DatabaseError databaseError) {
 
             }
-        };
-        mRecyclerView.setHasFixedSize(true);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        mRecyclerView.setAdapter(mFirebaseAdapter);
+        });
+
+        //Log.d("CUBONE", "queryFoods: " + queryFoods.size());
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        mFirebaseAdapter.cleanup();
-    }
+
+//    public void setUpFirebaseAdapter() {
+//        mFirebaseAdapter = new FirebaseRecyclerAdapter<Food, FirebaseFoodViewHolder>
+//                (Food.class, R.layout.food_list_item, FirebaseFoodViewHolder.class, mFoodReference) {
+//
+//
+//
+//            @Override
+//            protected void populateViewHolder(FirebaseFoodViewHolder viewHolder, Food model, int position) {
+//                viewHolder.bindFood(model);
+//
+//            }
+//        };
+//        mRecyclerView.setHasFixedSize(true);
+//        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+//        mRecyclerView.setAdapter(mFirebaseAdapter);
+//    }
+
+//    @Override
+//    protected void onDestroy() {
+//        super.onDestroy();
+//        mFirebaseAdapter.cleanup();
+//    }
 }
