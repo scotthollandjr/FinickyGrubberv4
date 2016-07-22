@@ -83,17 +83,18 @@ public class FoodListActivity extends AppCompatActivity {
                     }
 
                     if (!withRaw.isEmpty()) {
-                        for (String ingredient : mWith) {
-                            if (!(newFood.getIngredients().contains(ingredient.trim()))) {
+                        for (String goodIngr : mWith) {
+                            if (!(newFood.getIngredients().contains(goodIngr.trim()))) {
                                 queryFoods.remove(newFood);
-                                Log.d("CUBONE", ingredient + "");
                             }
                         }
                     }
 
                     if (!withoutRaw.isEmpty()) {
-                        if (newFood.getIngredients().contains(mWithout)) {
-                            queryFoods.remove(newFood);
+                        for (String badIngr : mWithout) {
+                            if (newFood.getIngredients().contains(badIngr.trim())) {
+                                queryFoods.remove(newFood);
+                            }
                         }
                     }
                 }
