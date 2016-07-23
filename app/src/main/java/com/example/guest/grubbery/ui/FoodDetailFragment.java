@@ -2,6 +2,7 @@ package com.example.guest.grubbery.ui;
 
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -28,7 +29,10 @@ public class FoodDetailFragment extends Fragment implements View.OnClickListener
     @Bind(R.id.brandTextView) TextView mBrandLabel;
     @Bind(R.id.saveButton) Button mSaveButton;
     @Bind(R.id.ingredientsTextView) TextView mIngredientsLabel;
-
+    @Bind(R.id.grainTextView) TextView mGrainLabel;
+    @Bind(R.id.countryTextView) TextView mCountryLabel;
+    @Bind(R.id.typeTextView) TextView mTypeLabel;
+    @Bind(R.id.kcalTextView) TextView mKcalLabel;
 
     private Food mFood;
 
@@ -67,6 +71,16 @@ public class FoodDetailFragment extends Fragment implements View.OnClickListener
         mFoodNameLabel.setText(mFood.getName());
         mBrandLabel.setText(mFood.getBrand());
         mIngredientsLabel.setText(android.text.TextUtils.join(", ", mFood.getIngredients()));
+        if (mFood.getGrain_free()) {
+            mGrainLabel.setText("Grain-Free: YES");
+            mGrainLabel.setTextColor(Color.parseColor("#00e500"));
+        } else {
+            mGrainLabel.setText("Grain-Free: NO");
+            mGrainLabel.setTextColor(Color.parseColor("#e50000"));
+        }
+        mCountryLabel.setText("Manufactured in: " + mFood.getManufactured_in());
+        mTypeLabel.setText("Type: " + mFood.getType());
+        mKcalLabel.setText(mFood.getKcal_per_cup() + " Kcal/cup");
 
         return view;
     }

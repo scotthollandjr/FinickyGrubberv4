@@ -70,6 +70,7 @@
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceMedium"
                         android:text="Grain Free"
+                        android:textStyle="bold"
                         android:id="@+id/grainTextView"
                         android:textColor="@color/colorTextIcons"
                         android:layout_gravity="right" />
@@ -79,6 +80,7 @@
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceMedium"
                         android:text="Manufactured in: Country"
+                        android:textStyle="bold"
                         android:id="@+id/countryTextView"
                         android:textColor="@color/colorTextIcons"
                         android:layout_alignParentTop="true"
