@@ -4,31 +4,70 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Spinner;
 
 import com.example.guest.grubbery.Constants;
 import com.example.guest.grubbery.R;
+import com.example.guest.grubbery.models.Food;
+
+import java.util.ArrayList;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class CatActivity extends AppCompatActivity implements View.OnClickListener {
     @Bind(R.id.searchButton) Button mSearchButton;
+    @Bind(R.id.brandSelect)
+    EditText mBrandSelect;
+    @Bind(R.id.typeSelect)
+    Spinner mTypeSelect;
+    @Bind(R.id.withSelect) EditText mWithSelect;
+    @Bind(R.id.withoutSelect) EditText mWithoutSelect;
+    @Bind(R.id.ageSelect) Spinner mAgeSelect;
+    private Spinner typeSelect;
+    private Spinner ageSelect;
+    ArrayList<Food> mFoods = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cat);
+        setContentView(R.layout.activity_select);
         ButterKnife.bind(this);
 
         mSearchButton.setOnClickListener(this);
+
+        Spinner typeSpinner = (Spinner) findViewById(R.id.typeSelect);
+        ArrayAdapter<CharSequence> typeAdapter = ArrayAdapter.createFromResource(this, R.array.types_array, android.R.layout.simple_spinner_item);
+        typeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        typeSpinner.setPrompt("Type:");
+        typeSpinner.setAdapter(typeAdapter);
+
+        Spinner ageSpinner = (Spinner) findViewById(R.id.ageSelect);
+        ArrayAdapter<CharSequence> ageAdapter = ArrayAdapter.createFromResource(this, R.array.cat_age_array, android.R.layout.simple_spinner_item);
+        ageAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        ageSpinner.setPrompt("Age/Style:");
+        ageSpinner.setAdapter(ageAdapter);
     }
 
     @Override
     public void onClick(View view) {
         if(view == mSearchButton) {
+            String mBrand = mBrandSelect.getText().toString().trim();
+            String mType = mTypeSelect.getSelectedItem().toString();
+            String mWith = mWithSelect.getText().toString().trim();
+            String mWithout = mWithoutSelect.getText().toString().trim();
+            String mAge = mAgeSelect.getSelectedItem().toString();
+
             Intent intent = new Intent(CatActivity.this, FoodListActivity.class);
-            intent.putExtra("type", Constants.FIREBASE_CHILD_CAT_FOODS);
+            intent.putExtra("dogOrCat", Constants.FIREBASE_CHILD_CAT_FOODS);
+            intent.putExtra("brand", mBrand);
+            intent.putExtra("type", mType);
+            intent.putExtra("with", mWith);
+            intent.putExtra("without", mWithout);
+            intent.putExtra("age", mAge);
             startActivity(intent);
         }
     }

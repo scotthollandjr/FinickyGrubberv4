@@ -3,7 +3,6 @@ package com.example.guest.grubbery.ui;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -13,13 +12,6 @@ import android.widget.Spinner;
 import com.example.guest.grubbery.Constants;
 import com.example.guest.grubbery.R;
 import com.example.guest.grubbery.models.Food;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
-import org.parceler.Parcels;
 
 import java.util.ArrayList;
 
@@ -40,7 +32,7 @@ public class DogActivity extends AppCompatActivity implements View.OnClickListen
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dog);
+        setContentView(R.layout.activity_select);
         ButterKnife.bind(this);
 
         mSearchButton.setOnClickListener(this);

@@ -46,11 +46,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.guest.grubbery.ui.MainActivity" />
         </activity>
-        <activity android:name=".ui.FoodDetailActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.guest.grubbery.ui.MainActivity" />
-        </activity>
+        <activity android:name=".ui.FoodDetailActivity"></activity>
         <activity android:name=".ui.LoginActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
