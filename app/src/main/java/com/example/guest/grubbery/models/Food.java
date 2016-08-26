@@ -16,10 +16,11 @@ public class Food {
     private String manufactured_in;
     private int kcal_per_cup;
     private String type;
+    private String age;
 
     public Food() {}
 
-    public Food(String name, String brand, ArrayList<String> ingredients, boolean grain_free, String manufactured_in, int kcal_per_cup, String type) {
+    public Food(String name, String brand, ArrayList<String> ingredients, boolean grain_free, String manufactured_in, int kcal_per_cup, String type, String age) {
         this.name = name;
         this.brand = brand;
         this.ingredients = ingredients;
@@ -27,6 +28,7 @@ public class Food {
         this.manufactured_in = manufactured_in;
         this.kcal_per_cup = kcal_per_cup;
         this.type = type;
+        this.age = age;
     }
 
     public String getName() {
@@ -53,6 +55,8 @@ public class Food {
         return type;
     }
 
+    public String getAge() { return age; }
+
 
     public List<String> getIngredients() {
         return ingredients;
@@ -71,5 +75,7 @@ public class Food {
     public void setKcal_per_cup(int kcal_per_cup) { this.kcal_per_cup = kcal_per_cup; }
 
     public void setType(String type) { this.type = type; }
+
+    public void setAge(String age) { this.age = age; }
 
 }

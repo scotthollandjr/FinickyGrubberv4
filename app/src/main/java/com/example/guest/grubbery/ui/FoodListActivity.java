@@ -99,6 +99,18 @@ public class FoodListActivity extends AppCompatActivity {
                             }
                         }
                     }
+
+                    if ((!mType.isEmpty()) && (!mType.equals("Type:"))) {
+                        if (!(newFood.getType().equals(mType))) {
+                            queryFoods.remove(newFood);
+                        }
+                    }
+
+                    if (!mAge.isEmpty() && (!mAge.equals("Age/Style:"))) {
+                        if (!(newFood.getAge().equals(mAge))) {
+                            queryFoods.remove(newFood);
+                        }
+                    }
                 }
                 printFoods(queryFoods);
             }
