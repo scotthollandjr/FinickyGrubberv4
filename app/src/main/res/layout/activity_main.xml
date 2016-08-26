@@ -50,12 +50,11 @@
 
     <Button
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="150dp"
         android:text="DOG"
         android:id="@+id/dogButton"
-        android:height="125dp"
-        android:textSize="40sp"
-        android:background="@color/colorPrimaryText"
+        android:textSize="50sp"
+        android:background="@color/colorAccent"
         android:fontFamily="serif"
         android:textStyle="bold"
         android:layout_above="@+id/catButton"
@@ -67,34 +66,17 @@
 
     <Button
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="150dp"
         android:text="CAT"
         android:id="@+id/catButton"
-        android:height="125dp"
-        android:textSize="40sp"
-        android:background="@color/colorPrimaryText"
+        android:textSize="50sp"
+        android:background="@color/colorAccent"
         android:fontFamily="serif"
         android:textStyle="bold"
-        android:layout_above="@+id/accountButton"
-        android:layout_alignLeft="@+id/imageView"
-        android:layout_alignStart="@+id/imageView"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"  />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="my saved foods"
-        android:id="@+id/accountButton"
-        android:background="@color/colorAccent"
-        android:layout_alignBottom="@+id/imageView"
-        android:layout_alignLeft="@+id/imageView"
-        android:layout_alignStart="@+id/imageView"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:fontFamily="serif"
-        android:textStyle="bold" />
+        android:layout_marginBottom="8dp" />
 
 </RelativeLayout>
