@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.example.guest.grubbery.Constants;
 import com.example.guest.grubbery.R;
@@ -44,6 +45,12 @@ public class FoodListActivity extends AppCompatActivity {
     private String withoutRaw;
 
     @Bind(R.id.recyclerView) RecyclerView mRecyclerView;
+    @Bind(R.id.kcalButton) TextView mKcalButton;
+    @Bind(R.id.fiberButton) TextView mFibergit Button;
+    @Bind(R.id.proteinButton) TextView mProteinButton;
+    @Bind(R.id.carbohydratesButton) TextView mCarbButton;
+    @Bind(R.id.ashButton) TextView mAshButton;
+    @Bind(R.id.fatButton) TextView mFatButton;
 
     private FoodListAdapter mFoodAdapter;
 
