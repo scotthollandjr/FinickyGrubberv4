@@ -11,13 +11,14 @@
     <string-array name="types_array">
         <item>Type:</item>
         <item>Dry</item>
-        <item>Can and Pouch</item>
-        <item>Raw (frozen)</item>
-        <item>Raw (freeze-dried)</item>
+        <item>Wet</item>
+        <item>Frozen Raw</item>
+        <item>Freeze-Dried Raw</item>
     </string-array>
 
     <string-array name="dog_age_array">
         <item>Age/Style:</item>
+        <item>ALS</item>
         <item>Puppy</item>
         <item>Adult</item>
         <item>Senior</item>
@@ -26,6 +27,7 @@
 
     <string-array name="cat_age_array">
         <item>Age/Style:</item>
+        <item>ALS</item>
         <item>Kitten</item>
         <item>Adult</item>
         <item>Senior</item>
