@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -31,7 +32,7 @@ import java.util.concurrent.RunnableFuture;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class FoodListActivity extends AppCompatActivity {
+public class FoodListActivity extends AppCompatActivity implements View.OnClickListener {
     private DatabaseReference mFoodReference;
     private Query mFoodQuery;
     private FirebaseRecyclerAdapter mFirebaseAdapter;
@@ -46,7 +47,7 @@ public class FoodListActivity extends AppCompatActivity {
 
     @Bind(R.id.recyclerView) RecyclerView mRecyclerView;
     @Bind(R.id.kcalButton) TextView mKcalButton;
-    @Bind(R.id.fiberButton) TextView mFibergit Button;
+    @Bind(R.id.fiberButton) TextView mFiberButton;
     @Bind(R.id.proteinButton) TextView mProteinButton;
     @Bind(R.id.carbohydratesButton) TextView mCarbButton;
     @Bind(R.id.ashButton) TextView mAshButton;
@@ -130,6 +131,29 @@ public class FoodListActivity extends AppCompatActivity {
         });
 
         //Log.d("CUBONE", "queryFoods: " + queryFoods.size());
+    }
+
+    @Override
+    public void onClick(View view) {
+        if (view == mAshButton) {
+
+        }
+        if (view == mCarbButton) {
+
+        }
+        if (view == mFatButton) {
+
+        }
+        if (view == mFiberButton) {
+
+        }
+        if (view == mProteinButton) {
+
+        }
+        if (view == mKcalButton) {
+
+        }
+
     }
 
     public void printFoods(ArrayList<Food> foods) {
