@@ -13,6 +13,8 @@ public class Food {
     private String brand;
     private List<String> ingredients = new ArrayList<>();
     private boolean grain_free;
+    private boolean small_breed;
+    private boolean large_breed;
     private String manufactured_in;
     private int kcal_per_cup;
     private String type;
@@ -20,11 +22,13 @@ public class Food {
 
     public Food() {}
 
-    public Food(String name, String brand, ArrayList<String> ingredients, boolean grain_free, String manufactured_in, int kcal_per_cup, String type, String age) {
+    public Food(String name, String brand, ArrayList<String> ingredients, boolean grain_free, boolean small_breed, boolean large_breed, String manufactured_in, int kcal_per_cup, String type, String age) {
         this.name = name;
         this.brand = brand;
         this.ingredients = ingredients;
         this.grain_free = grain_free;
+        this.small_breed = small_breed;
+        this.large_breed = large_breed;
         this.manufactured_in = manufactured_in;
         this.kcal_per_cup = kcal_per_cup;
         this.type = type;
@@ -42,6 +46,10 @@ public class Food {
     public boolean getGrain_free() {
         return grain_free;
     }
+
+    public boolean getSmall_breed() { return small_breed; }
+
+    public boolean getLarge_breed() { return large_breed; }
 
     public String getManufactured_in() {
         return manufactured_in;

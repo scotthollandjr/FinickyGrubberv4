@@ -130,5 +130,31 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp" />
 
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Grain-Free"
+        android:id="@+id/grainCheck"
+        android:layout_above="@+id/brandSelect"
+        android:layout_alignLeft="@+id/brandSelect"
+        android:layout_alignStart="@+id/brandSelect" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Small Breed"
+        android:id="@+id/smallCheck"
+        android:layout_above="@+id/brandSelect"
+        android:layout_centerHorizontal="true" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Large Breed"
+        android:id="@+id/largeCheck"
+        android:layout_above="@+id/brandSelect"
+        android:layout_toRightOf="@+id/smallCheck"
+        android:layout_toEndOf="@+id/smallCheck" />
+
 
 </RelativeLayout>

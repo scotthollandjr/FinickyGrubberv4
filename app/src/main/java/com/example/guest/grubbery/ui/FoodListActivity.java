@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -44,6 +45,9 @@ public class FoodListActivity extends AppCompatActivity implements View.OnClickL
     private String mAge;
     private String withRaw;
     private String withoutRaw;
+    private boolean mGrain;
+    private boolean mSmall;
+    private boolean mLarge;
 
     @Bind(R.id.recyclerView) RecyclerView mRecyclerView;
     @Bind(R.id.kcalButton) TextView mKcalButton;
@@ -74,6 +78,9 @@ public class FoodListActivity extends AppCompatActivity implements View.OnClickL
         withoutRaw = intent.getStringExtra("without");
         mWithout = withoutRaw.split(",");
         mAge = intent.getStringExtra("age");
+        mGrain = intent.getExtras().getBoolean("grain");
+        mSmall = intent.getExtras().getBoolean("small");
+        mLarge = intent.getExtras().getBoolean("large");
 
         mFoodReference = FirebaseDatabase.getInstance().getReference(dogOrCat);
 
@@ -84,7 +91,26 @@ public class FoodListActivity extends AppCompatActivity implements View.OnClickL
                     Food newFood = ds.getValue(Food.class);
                     mFoods.add(newFood);
                     queryFoods.add(newFood);
-                    Log.d("cubby", newFood.getBrand() + "");
+                    Log.d("cubby get grain free", newFood.getGrain_free() + "");
+                    Log.d("cubby mgrrain", mGrain + "");
+
+                    if (mGrain == true) {
+                        if(!(newFood.getGrain_free())) {
+                            queryFoods.remove(newFood);
+                        }
+                    }
+
+                    if (mSmall == true) {
+                        if(!(newFood.getSmall_breed())) {
+                            queryFoods.remove(newFood);
+                        }
+                    }
+
+                    if (mLarge == true) {
+                        if(!(newFood.getLarge_breed())) {
+                            queryFoods.remove(newFood);
+                        }
+                    }
 
                     if (!mBrand.isEmpty()) {
                         if (!(newFood.getBrand().equals(mBrand))) {
