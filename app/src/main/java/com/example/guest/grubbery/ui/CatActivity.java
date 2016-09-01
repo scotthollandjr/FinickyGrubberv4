@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
 
@@ -27,6 +28,9 @@ public class CatActivity extends AppCompatActivity implements View.OnClickListen
     @Bind(R.id.withSelect) EditText mWithSelect;
     @Bind(R.id.withoutSelect) EditText mWithoutSelect;
     @Bind(R.id.ageSelect) Spinner mAgeSelect;
+    @Bind(R.id.grainCheck) CheckBox mGrainCheck;
+    @Bind(R.id.smallCheck) CheckBox mSmallCheck;
+    @Bind(R.id.largeCheck) CheckBox mLargeCheck;
     private Spinner typeSelect;
     private Spinner ageSelect;
     ArrayList<Food> mFoods = new ArrayList<>();
@@ -55,6 +59,9 @@ public class CatActivity extends AppCompatActivity implements View.OnClickListen
     @Override
     public void onClick(View view) {
         if(view == mSearchButton) {
+            boolean mGrain = mGrainCheck.isChecked();
+            boolean mSmall = mSmallCheck.isChecked();
+            boolean mLarge = mLargeCheck.isChecked();
             String mBrand = mBrandSelect.getText().toString().trim();
             String mType = mTypeSelect.getSelectedItem().toString();
             String mWith = mWithSelect.getText().toString().trim();
@@ -68,6 +75,9 @@ public class CatActivity extends AppCompatActivity implements View.OnClickListen
             intent.putExtra("with", mWith);
             intent.putExtra("without", mWithout);
             intent.putExtra("age", mAge);
+            intent.putExtra("grain", mGrain);
+            intent.putExtra("small", mSmall);
+            intent.putExtra("large", mLarge);
             startActivity(intent);
         }
     }
