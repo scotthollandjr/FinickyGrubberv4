@@ -50,6 +50,7 @@ public class FoodListActivity extends AppCompatActivity {
     private boolean mLarge;
 
     @Bind(R.id.recyclerView) RecyclerView mRecyclerView;
+    @Bind(R.id.noResultsText) TextView mNoResultsLabel;
 
     private FoodListAdapter mFoodAdapter;
 
@@ -87,19 +88,19 @@ public class FoodListActivity extends AppCompatActivity {
                     queryFoods.add(newFood);
 
                     if (mGrain == true) {
-                        if(!(newFood.getGrain_free())) {
+                        if (!(newFood.getGrain_free())) {
                             queryFoods.remove(newFood);
                         }
                     }
 
                     if (mSmall == true) {
-                        if(!(newFood.getSmall_breed())) {
+                        if (!(newFood.getSmall_breed())) {
                             queryFoods.remove(newFood);
                         }
                     }
 
                     if (mLarge == true) {
-                        if(!(newFood.getLarge_breed())) {
+                        if (!(newFood.getLarge_breed())) {
                             queryFoods.remove(newFood);
                         }
                     }
@@ -138,7 +139,11 @@ public class FoodListActivity extends AppCompatActivity {
                         }
                     }
                 }
-                printFoods(queryFoods);
+                if (queryFoods.size() >= 1 ) {
+                    printFoods(queryFoods);
+                } else {
+                    mNoResultsLabel.setText("Sorry, your query returned no matches.");
+                }
             }
 
 
