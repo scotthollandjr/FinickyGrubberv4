@@ -33,6 +33,9 @@ public class FoodDetailFragment extends Fragment implements View.OnClickListener
     @Bind(R.id.countryTextView) TextView mCountryLabel;
     @Bind(R.id.typeTextView) TextView mTypeLabel;
     @Bind(R.id.kcalTextView) TextView mKcalLabel;
+    @Bind(R.id.proteinText) TextView mProteinLabel;
+    @Bind(R.id.fatText) TextView mFatLabel;
+    @Bind(R.id.fiberText) TextView mFiberLabel;
 
     private Food mFood;
 
@@ -58,7 +61,6 @@ public class FoodDetailFragment extends Fragment implements View.OnClickListener
         mFood = Parcels.unwrap(getArguments().getParcelable("food"));
     }
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -69,7 +71,7 @@ public class FoodDetailFragment extends Fragment implements View.OnClickListener
         mSaveButton.setOnClickListener(this);
 
         mFoodNameLabel.setText(mFood.getName());
-        mBrandLabel.setText(mFood.getBrand());
+        mBrandLabel.setText("by " + mFood.getBrand());
         mIngredientsLabel.setText(android.text.TextUtils.join(", ", mFood.getIngredients()));
         if (mFood.getGrain_free()) {
             mGrainLabel.setText("Grain-Free: YES");
@@ -80,7 +82,10 @@ public class FoodDetailFragment extends Fragment implements View.OnClickListener
         }
         mCountryLabel.setText("Manufactured in: " + mFood.getManufactured_in());
         mTypeLabel.setText("Type: " + mFood.getType());
-        mKcalLabel.setText(mFood.getKcal_per_cup() + " Kcal/cup");
+        mKcalLabel.setText(mFood.getKcal_per_oz() + " Kcal/oz");
+        mProteinLabel.setText("Protein: " + mFood.getCrude_protein() + "%");
+        mFatLabel.setText("Fat: " + mFood.getCrude_fat() + "%");
+        mFiberLabel.setText("Fiber: " + mFood.getCrude_fiber() + "%");
 
         return view;
     }
