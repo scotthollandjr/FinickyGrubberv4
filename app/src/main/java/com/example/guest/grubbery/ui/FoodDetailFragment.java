@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,6 +37,7 @@ public class FoodDetailFragment extends Fragment implements View.OnClickListener
     @Bind(R.id.proteinText) TextView mProteinLabel;
     @Bind(R.id.fatText) TextView mFatLabel;
     @Bind(R.id.fiberText) TextView mFiberLabel;
+    @Bind(R.id.ageTextView) TextView mAgeLabel;
 
     private Food mFood;
 
@@ -82,10 +84,12 @@ public class FoodDetailFragment extends Fragment implements View.OnClickListener
         }
         mCountryLabel.setText("Manufactured in: " + mFood.getManufactured_in());
         mTypeLabel.setText("Type: " + mFood.getType());
+        mAgeLabel.setText(mFood.getAge() + "");
         mKcalLabel.setText(mFood.getKcal_per_oz() + " Kcal/oz");
         mProteinLabel.setText("Protein: " + mFood.getCrude_protein() + "%");
         mFatLabel.setText("Fat: " + mFood.getCrude_fat() + "%");
         mFiberLabel.setText("Fiber: " + mFood.getCrude_fiber() + "%");
+
 
         return view;
     }

@@ -91,8 +91,6 @@ public class FoodListActivity extends AppCompatActivity {
                     Food newFood = ds.getValue(Food.class);
                     mFoods.add(newFood);
                     queryFoods.add(newFood);
-                    Log.d("cubby get grain free", newFood.getGrain_free() + "");
-                    Log.d("cubby mgrrain", mGrain + "");
 
                     if (mGrain == true) {
                         if(!(newFood.getGrain_free())) {
