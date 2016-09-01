@@ -105,7 +105,7 @@ public class FoodListActivity extends AppCompatActivity {
                     }
 
                     if (!mBrand.isEmpty()) {
-                        if (!(newFood.getBrand().equals(mBrand))) {
+                        if (!((newFood.getBrand()).toLowerCase().equals(mBrand.toLowerCase()))) {
                             queryFoods.remove(newFood);
                         }
                     }
