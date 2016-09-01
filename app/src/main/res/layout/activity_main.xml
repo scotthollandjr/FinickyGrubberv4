@@ -30,7 +30,8 @@
         android:layout_height="wrap_content"
         android:text="finicky grubber"
         android:id="@+id/appNameTextView"
-        android:textSize="60sp"
+        android:textSize="75sp"
+        android:paddingTop="75dp"
         android:textColor="@color/colorSecondaryText"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
@@ -44,13 +45,13 @@
         android:id="@+id/textView4"
         android:layout_below="@+id/appNameTextView"
         android:layout_centerHorizontal="true"
-        android:textSize="20sp"
+        android:textSize="40sp"
         android:textColor="@color/colorSecondaryText"
         android:fontFamily="serif" />
 
     <Button
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="200dp"
         android:text="DOG"
         android:id="@+id/dogButton"
         android:textSize="50sp"
@@ -66,7 +67,7 @@
 
     <Button
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="200dp"
         android:text="CAT"
         android:id="@+id/catButton"
         android:textSize="50sp"
