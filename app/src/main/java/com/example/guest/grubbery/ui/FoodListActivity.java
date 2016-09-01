@@ -33,7 +33,7 @@ import java.util.concurrent.RunnableFuture;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class FoodListActivity extends AppCompatActivity implements View.OnClickListener {
+public class FoodListActivity extends AppCompatActivity {
     private DatabaseReference mFoodReference;
     private Query mFoodQuery;
     private FirebaseRecyclerAdapter mFirebaseAdapter;
@@ -50,12 +50,12 @@ public class FoodListActivity extends AppCompatActivity implements View.OnClickL
     private boolean mLarge;
 
     @Bind(R.id.recyclerView) RecyclerView mRecyclerView;
-    @Bind(R.id.kcalButton) TextView mKcalButton;
-    @Bind(R.id.fiberButton) TextView mFiberButton;
-    @Bind(R.id.proteinButton) TextView mProteinButton;
-    @Bind(R.id.carbohydratesButton) TextView mCarbButton;
-    @Bind(R.id.ashButton) TextView mAshButton;
-    @Bind(R.id.fatButton) TextView mFatButton;
+//    @Bind(R.id.kcalButton) TextView mKcalButton;
+//    @Bind(R.id.fiberButton) TextView mFiberButton;
+//    @Bind(R.id.proteinButton) TextView mProteinButton;
+//    @Bind(R.id.carbohydratesButton) TextView mCarbButton;
+//    @Bind(R.id.ashButton) TextView mAshButton;
+//    @Bind(R.id.fatButton) TextView mFatButton;
 
     private FoodListAdapter mFoodAdapter;
 
@@ -159,28 +159,28 @@ public class FoodListActivity extends AppCompatActivity implements View.OnClickL
         //Log.d("CUBONE", "queryFoods: " + queryFoods.size());
     }
 
-    @Override
-    public void onClick(View view) {
-        if (view == mAshButton) {
-
-        }
-        if (view == mCarbButton) {
-
-        }
-        if (view == mFatButton) {
-
-        }
-        if (view == mFiberButton) {
-
-        }
-        if (view == mProteinButton) {
-
-        }
-        if (view == mKcalButton) {
-
-        }
-
-    }
+//    @Override
+//    public void onClick(View view) {
+//        if (view == mAshButton) {
+//
+//        }
+//        if (view == mCarbButton) {
+//
+//        }
+//        if (view == mFatButton) {
+//
+//        }
+//        if (view == mFiberButton) {
+//
+//        }
+//        if (view == mProteinButton) {
+//
+//        }
+//        if (view == mKcalButton) {
+//
+//        }
+//
+//    }
 
     public void printFoods(ArrayList<Food> foods) {
         FoodListActivity.this.runOnUiThread(new Runnable() {

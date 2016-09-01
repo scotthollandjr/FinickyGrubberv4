@@ -39,148 +39,169 @@
         android:fontFamily="serif" />
 
     <LinearLayout
-        android:id="@+id/checkContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_above="@+id/brandSelect" >
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@id/textView3">
 
-        <CheckBox
-            android:layout_width="0dp"
+        <LinearLayout
+            android:id="@+id/checkContainer"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Grain-Free"
-            android:id="@+id/grainCheck"
+            android:orientation="horizontal"
+            android:layout_above="@+id/brandSelect"
+            android:layout_weight="1" >
+
+            <CheckBox
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Grain-Free"
+                android:id="@+id/grainCheck"
+                android:background="@color/colorPrimaryText"
+                android:layout_marginLeft="8dp"
+                android:layout_marginBottom="8dp"
+                android:height="50dp"
+                android:padding="5dp"
+                android:textSize="25sp"/>
+
+            <CheckBox
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Small Breed"
+                android:id="@+id/smallCheck"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:background="@color/colorPrimaryText"
+                android:layout_marginLeft="8dp"
+                android:layout_marginBottom="8dp"
+                android:height="50dp"
+                android:padding="5dp"
+                android:textSize="25sp" />
+
+            <CheckBox
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Large Breed"
+                android:id="@+id/largeCheck"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:background="@color/colorPrimaryText"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
+                android:height="50dp"
+                android:padding="5dp"
+                android:textSize="25sp" />
+
+        </LinearLayout>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/brandSelect"
             android:background="@color/colorPrimaryText"
-            android:layout_marginLeft="8dp"
-            android:layout_marginBottom="8dp"
+            android:hint="Brand:"
             android:height="50dp"
-            android:padding="5dp"
-            android:textSize="25sp"/>
-
-        <CheckBox
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Small Breed"
-            android:id="@+id/smallCheck"
+            android:padding="10dp"
+            android:layout_above="@+id/withSelect"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:background="@color/colorPrimaryText"
-            android:layout_marginLeft="8dp"
-            android:layout_marginBottom="8dp"
-            android:height="50dp"
-            android:padding="5dp"
-            android:textSize="25sp" />
-
-        <CheckBox
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Large Breed"
-            android:id="@+id/largeCheck"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:background="@color/colorPrimaryText"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginBottom="8dp"
+            android:textColor="@color/colorSecondaryText"
+            android:layout_weight="1"
+            android:textSize="25sp" />
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/typeSelect"
+            android:background="@color/colorPrimaryText"
             android:height="50dp"
-            android:padding="5dp"
+            android:padding="10dp"
+            android:layout_above="@+id/ageSelect"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:textColor="@color/colorSecondaryText"
+            android:prompt="@string/type_prompt"
+            android:layout_weight="1"
+            android:textSize="25sp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/withSelect"
+            android:background="@color/colorPrimaryText"
+            android:hint="Must have:"
+            android:height="50dp"
+            android:padding="10dp"
+            android:layout_above="@+id/withoutSelect"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:textColor="@color/colorSecondaryText"
+            android:layout_weight="1"
+            android:textSize="25sp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/withoutSelect"
+            android:background="@color/colorPrimaryText"
+            android:hint="Must not have:"
+            android:height="50dp"
+            android:padding="10dp"
+            android:layout_above="@+id/typeSelect"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:textColor="@color/colorSecondaryText"
+            android:layout_weight="1"
+            android:textSize="25sp" />
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/ageSelect"
+            android:background="@color/colorPrimaryText"
+            android:height="50dp"
+            android:padding="10dp"
+            android:layout_above="@+id/searchButton"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:textColor="@color/colorSecondaryText"
+            android:prompt="@string/age_prompt"
+            android:layout_weight="1"
+            android:textSize="25sp" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="find foods"
+            android:id="@+id/searchButton"
+            android:background="@color/colorAccent"
+            android:fontFamily="serif"
+            android:textStyle="bold"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_weight="1"
             android:textSize="25sp" />
 
     </LinearLayout>
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/brandSelect"
-        android:background="@color/colorPrimaryText"
-        android:hint="Brand:"
-        android:height="50dp"
-        android:padding="10dp"
-        android:layout_above="@+id/withSelect"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:textColor="@color/colorSecondaryText" />
-
-    <Spinner
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/typeSelect"
-        android:background="@color/colorPrimaryText"
-        android:height="50dp"
-        android:padding="10dp"
-        android:layout_above="@+id/ageSelect"
-        android:layout_centerHorizontal="true"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:textColor="@color/colorSecondaryText"
-        android:prompt="@string/type_prompt" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/withSelect"
-        android:background="@color/colorPrimaryText"
-        android:hint="Must have:"
-        android:height="50dp"
-        android:padding="10dp"
-        android:layout_above="@+id/withoutSelect"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:textColor="@color/colorSecondaryText" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/withoutSelect"
-        android:background="@color/colorPrimaryText"
-        android:hint="Must not have:"
-        android:height="50dp"
-        android:padding="10dp"
-        android:layout_above="@+id/typeSelect"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:textColor="@color/colorSecondaryText" />
-
-    <Spinner
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/ageSelect"
-        android:background="@color/colorPrimaryText"
-        android:height="50dp"
-        android:padding="10dp"
-        android:layout_above="@+id/searchButton"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:textColor="@color/colorSecondaryText"
-        android:prompt="@string/age_prompt" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="find foods"
-        android:id="@+id/searchButton"
-        android:background="@color/colorAccent"
-        android:fontFamily="serif"
-        android:textStyle="bold"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp" />
 
 </RelativeLayout>
