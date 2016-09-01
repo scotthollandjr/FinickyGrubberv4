@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.Spinner;
 
 import com.example.guest.grubbery.Constants;
@@ -29,8 +30,8 @@ public class CatActivity extends AppCompatActivity implements View.OnClickListen
     @Bind(R.id.withoutSelect) EditText mWithoutSelect;
     @Bind(R.id.ageSelect) Spinner mAgeSelect;
     @Bind(R.id.grainCheck) CheckBox mGrainCheck;
-    @Bind(R.id.smallCheck) CheckBox mSmallCheck;
-    @Bind(R.id.largeCheck) CheckBox mLargeCheck;
+    @Bind(R.id.smallCheck) RadioButton mSmallCheck;
+    @Bind(R.id.largeCheck) RadioButton mLargeCheck;
     private Spinner typeSelect;
     private Spinner ageSelect;
     ArrayList<Food> mFoods = new ArrayList<>();
