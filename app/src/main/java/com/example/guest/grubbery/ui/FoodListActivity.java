@@ -69,9 +69,9 @@ public class FoodListActivity extends AppCompatActivity {
         mBrand = intent.getStringExtra("brand");
         mType = intent.getStringExtra("type");
         withRaw = intent.getStringExtra("with");
-        mWith = withRaw.split(",");
+        mWith = withRaw.toLowerCase().split(",");
         withoutRaw = intent.getStringExtra("without");
-        mWithout = withoutRaw.split(",");
+        mWithout = withoutRaw.toLowerCase().split(",");
         mAge = intent.getStringExtra("age");
         mGrain = intent.getExtras().getBoolean("grain");
         mSmall = intent.getExtras().getBoolean("small");

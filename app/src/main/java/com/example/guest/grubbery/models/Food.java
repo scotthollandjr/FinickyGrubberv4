@@ -65,15 +65,15 @@ public class Food {
         return kcal_per_oz;
     }
 
-    public float getCrude_protein() {
+    public int getCrude_protein() {
         return crude_protein;
     }
 
-    public float getCrude_fat() {
+    public int getCrude_fat() {
         return crude_fat;
     }
 
-    public float getCrude_fiber() {
+    public int getCrude_fiber() {
         return crude_fiber;
     }
 
@@ -100,11 +100,11 @@ public class Food {
 
     public void setKcal_per_cup(int kcal_per_oz) { this.kcal_per_oz = kcal_per_oz; }
 
-    public void setCrude_protein(int crude_protein) { this.crude_protein = crude_protein; }
+    public void setCrude_protein(int protein) { this.crude_protein = crude_protein; }
 
-    public void setCrude_fat(int crude_fat) { this.crude_fat = crude_fat; }
+    public void setCrude_fat(int fat) { this.crude_fat = crude_fat; }
 
-    public void setCrude_fiber(int crude_fiber) { this.crude_fiber = crude_fiber; }
+    public void setCrude_fiber(int fiber) { this.crude_fiber = crude_fiber; }
 
     public void setType(String type) { this.type = type; }
 

@@ -10,7 +10,8 @@
         android:label="finicky grubber"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.MainActivity" android:screenOrientation="portrait">
+        <activity android:name=".ui.MainActivity" android:screenOrientation="portrait"
+        android:theme="@style/NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -47,7 +48,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.guest.grubbery.ui.MainActivity" />
         </activity>
-        <activity android:name=".ui.UserAccountActivity"></activity>
+        <activity android:name=".ui.UserAccountActivity"></activity>NoActionBar
     </application>
 
 </manifest>
