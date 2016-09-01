@@ -9,7 +9,7 @@
         android:icon="@mipmap/ic_launcher"
         android:label="finicky grubber"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/NoActionBar">
         <activity android:name=".ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -47,7 +47,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.guest.grubbery.ui.MainActivity" />
         </activity>
-        <activity android:name=".ui.UserAccountActivity"></activity>
+        <activity android:name=".ui.UserAccountActivity"></activity>NoActionBar
     </application>
 
 </manifest>

@@ -31,7 +31,7 @@
         android:text="finicky grubber"
         android:id="@+id/appNameTextView"
         android:textSize="75sp"
-        android:paddingTop="75dp"
+        android:paddingTop="125dp"
         android:textColor="@color/colorSecondaryText"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
