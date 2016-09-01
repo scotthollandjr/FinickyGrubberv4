@@ -50,12 +50,6 @@ public class FoodListActivity extends AppCompatActivity {
     private boolean mLarge;
 
     @Bind(R.id.recyclerView) RecyclerView mRecyclerView;
-//    @Bind(R.id.kcalButton) TextView mKcalButton;
-//    @Bind(R.id.fiberButton) TextView mFiberButton;
-//    @Bind(R.id.proteinButton) TextView mProteinButton;
-//    @Bind(R.id.carbohydratesButton) TextView mCarbButton;
-//    @Bind(R.id.ashButton) TextView mAshButton;
-//    @Bind(R.id.fatButton) TextView mFatButton;
 
     private FoodListAdapter mFoodAdapter;
 
@@ -153,32 +147,7 @@ public class FoodListActivity extends AppCompatActivity {
 
             }
         });
-
-        //Log.d("CUBONE", "queryFoods: " + queryFoods.size());
     }
-
-//    @Override
-//    public void onClick(View view) {
-//        if (view == mAshButton) {
-//
-//        }
-//        if (view == mCarbButton) {
-//
-//        }
-//        if (view == mFatButton) {
-//
-//        }
-//        if (view == mFiberButton) {
-//
-//        }
-//        if (view == mProteinButton) {
-//
-//        }
-//        if (view == mKcalButton) {
-//
-//        }
-//
-//    }
 
     public void printFoods(ArrayList<Food> foods) {
         FoodListActivity.this.runOnUiThread(new Runnable() {
@@ -192,28 +161,4 @@ public class FoodListActivity extends AppCompatActivity {
             }
         });
     }
-
-
-//    public void setUpFirebaseAdapter() {
-//        mFirebaseAdapter = new FirebaseRecyclerAdapter<Food, FirebaseFoodViewHolder>
-//                (Food.class, R.layout.food_list_item, FirebaseFoodViewHolder.class, mFoodReference) {
-//
-//
-//
-//            @Override
-//            protected void populateViewHolder(FirebaseFoodViewHolder viewHolder, Food model, int position) {
-//                viewHolder.bindFood(model);
-//
-//            }
-//        };
-//        mRecyclerView.setHasFixedSize(true);
-//        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-//        mRecyclerView.setAdapter(mFirebaseAdapter);
-//    }
-//
-//    @Override
-//    protected void onDestroy() {
-//        super.onDestroy();
-//        mFirebaseAdapter.cleanup();
-//    }
 }

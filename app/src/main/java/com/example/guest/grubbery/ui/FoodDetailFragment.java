@@ -41,10 +41,6 @@ public class FoodDetailFragment extends Fragment implements View.OnClickListener
 
     private Food mFood;
 
-    //    @Bind(R.id.lookUpText) EditText mLookUpLabel;
-    //    @Bind(R.id.defineButton) Button mDefineButton;
-
-
     public static FoodDetailFragment newInstance(Food food) {
         FoodDetailFragment foodDetailFragment = new FoodDetailFragment();
         Bundle args = new Bundle();
@@ -69,7 +65,6 @@ public class FoodDetailFragment extends Fragment implements View.OnClickListener
         View view = inflater.inflate(R.layout.fragment_food_detail, container, false);
         ButterKnife.bind(this, view);
 
-//        mDefineButton.setOnClickListener(this);
         mSaveButton.setOnClickListener(this);
 
         mFoodNameLabel.setText(mFood.getName());
@@ -96,12 +91,6 @@ public class FoodDetailFragment extends Fragment implements View.OnClickListener
 
     @Override
     public void onClick(View view) {
-//        if(view == mDefineButton) {
-//            String word = mLookUpLabel.getText().toString();
-//            Intent intent = new Intent(getActivity(), DictionaryActivity.class);
-//            intent.putExtra("word", word);
-//            startActivity(intent);
-//        }
         if(view == mSaveButton) {
             DatabaseReference foodRef = FirebaseDatabase
                     .getInstance()

@@ -189,8 +189,6 @@
 
             </LinearLayout>
 
-
-
              <RelativeLayout
                 android:id="@+id/InnerRelativeLayout"
                 android:layout_width="wrap_content"
@@ -209,39 +207,9 @@
                      android:layout_marginBottom="8dp"
                      android:layout_centerHorizontal="true" />
 
-                    <!--<EditText-->
-                        <!--android:hint="Look-Up Ingredient"-->
-                        <!--android:id="@+id/lookUpText"-->
-                        <!--android:layout_width="fill_parent"-->
-                        <!--android:layout_height="wrap_content"-->
-                        <!--android:padding="15dp"-->
-                        <!--android:background="@color/colorTextIcons"-->
-                        <!--android:textColor="@color/colorPrimaryDark"-->
-                        <!--android:textSize="15sp" />-->
-
-                    <!--<Button-->
-                        <!--android:text="Define"-->
-                        <!--android:id="@+id/defineButton"-->
-                        <!--android:layout_alignParentRight="true"-->
-                        <!--android:layout_width="wrap_content"-->
-                        <!--android:layout_height="wrap_content"-->
-                        <!--android:background="@color/colorAccent"-->
-                        <!--android:textColor="@color/colorTextIcons"-->
-                        <!--android:textSize="15sp" />-->
-
                 </RelativeLayout>
 
         </RelativeLayout>
-
-            <!--<Button-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:text="Save food"-->
-                <!--android:id="@+id/saveFoodButton"-->
-                <!--android:layout_alignParentBottom="true"-->
-                <!--android:background="@color/colorAccent"-->
-                <!--android:textColor="@color/colorTextIcons"-->
-                <!--android:textSize="15sp" />-->
 
     </LinearLayout>
 

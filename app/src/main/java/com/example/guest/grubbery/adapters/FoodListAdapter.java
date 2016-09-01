@@ -50,7 +50,6 @@ public class FoodListAdapter extends RecyclerView.Adapter<FoodListAdapter.FoodVi
     public class FoodViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         @Bind(R.id.foodNameTextView) TextView mFoodNameTextView;
         @Bind(R.id.brandTextView) TextView mBrandTextView;
-        //@Bind(R.id.ingredientsTextView) TextView mIngredientsTextView;
 
         private Context mContext;
 

@@ -149,14 +149,3 @@ public class AccountActivity extends AppCompatActivity implements View.OnClickLi
         return true;
     }
 }
-
-
-//
-//    Intent intent = new Intent(AccountActivity.this, ThankActivity.class);
-//
-//intent.putExtra("username", username);
-//        intent.putExtra("password", password);
-//        intent.putExtra("pasword2", password2);
-//        intent.putExtra("petname", petname);
-//        intent.putExtra("breed", breed);
-//        startActivity(intent);
