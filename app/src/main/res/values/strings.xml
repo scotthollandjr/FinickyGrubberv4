@@ -18,18 +18,16 @@
 
     <string-array name="dog_age_array">
         <item>Age/Style:</item>
-        <item>ALS</item>
         <item>Puppy</item>
-        <item>Adult</item>
+        <item>ALS</item>
         <item>Senior</item>
         <item>Weight-loss</item>
     </string-array>
 
     <string-array name="cat_age_array">
         <item>Age/Style:</item>
-        <item>ALS</item>
         <item>Kitten</item>
-        <item>Adult</item>
+        <item>ALS</item>
         <item>Senior</item>
         <item>Weight-loss</item>
     </string-array>
